@@ -1,0 +1,30 @@
+{
+  "name": "BiiP.world",
+  "version": "1.0.0",
+  "description": "BiiP.world is a Web 3 dApp",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "start-server": "node app.js",
+    "svgo": "npx svgo --multipass public_html/svgs/clock.svg"
+  },
+  "author": "Lucian Apetrei",
+  "license": "GPL 3.0",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "data/*"
+    ]
+  },
+  "dependencies": {
+    "@proton/api": "^27.3.7",
+    "express": "^4.17.3",
+    "express-handlebars": "^6.0.6",
+    "path": "^0.12.7",
+    "svgo": "^3.0.0",
+    "ts-node": "^10.9.1"
+  }
+}

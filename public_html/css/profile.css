@@ -1,0 +1,267 @@
+#cover {
+    min-height: 230px;
+    position: relative;
+}
+
+.posts {
+    padding-bottom: 100px;
+}
+
+.profile_pic {
+    border-radius: 51%;
+    width: 128px;
+    height: 128px;
+    position: absolute;
+    bottom: -74px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    display: block;
+    z-index: 1;
+    cursor: pointer;
+    transition: 0.69s transform
+}
+
+.profile_pic:hover {
+    transform: rotate(360deg)
+}
+
+.profile_pic:active {
+    transform: scale(1.23)
+}
+
+.user_name {
+    margin: 10px auto 0 auto;
+    font-size: 1.23rem;
+}
+
+.user_name span {
+    vertical-align: top;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 23px;
+}
+
+.user_name+b {
+    font-weight: 300;
+    font-family: 'Dosis', Arial, sans-serif !important;
+    font-size: 16px;
+    padding: 9px 0 0 0;
+    display: block;
+    opacity: 0.69
+}
+
+
+.send,
+.username,
+.holdings {
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 8px;
+    border-radius: 10px;
+    border: 0;
+    background: var(--second-contrast-15);
+    color: var(--second-contrast)
+}
+
+.send {
+    height: 32px;
+    margin: 8px 0;
+    padding: 4px 16px;
+    vertical-align: top;
+    background: var(--second-contrast-15);
+    overflow: hidden;
+    position: relative;
+}
+
+.send img {
+    transition: 0.23s all;
+}
+
+.send img:first-of-type {
+    position: absolute;
+    top: 9px;
+    left: -23px
+}
+
+.send:hover img {
+    transform: translate(10px);
+    left: 0px
+}
+
+.holdings,
+.holdings:visited {
+    color: #db463e;
+    margin-left: 0;
+    padding: 9px 16px;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Dosis', Arial, sans-serif;
+}
+
+.holdings:after {
+    content: ' GRAT';
+}
+
+#living {
+    padding: 12px 0;
+}
+
+#living img {
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+.distribution-stats {
+    margin-bottom: 64px;
+}
+
+.distribution-stats span {
+    background: rgba(219, 70, 62, 0.32);
+    padding: 5px 10px;
+    color: #db463e;
+    display: inline-block;
+    font-family: 'Dosis', Arial, sans-serif;
+}
+
+.distribution-stats .l2g {
+    text-align: left;
+}
+
+.distribution-stats img {
+    vertical-align: sub;
+}
+
+.distribution-stats .s2e {
+    text-align: right;
+}
+
+.distribution-stats .s2e {
+    color: #3e8fdb;
+    background-color: #3e8fdb32;
+}
+
+
+.stats {
+    padding: 10px
+}
+
+.stats div {
+    border-radius: 10px;
+    padding: 23px 0;
+    background-color: var(--second-contrast-15);
+}
+
+.stats b {
+    display: block;
+    font-size: 23px;
+    padding: 10px 0 0 0;
+    font-family: 'Dosis', Arial, sans-serif;
+}
+
+#actions {
+    padding: 12px 0;
+}
+
+#actions div {
+    width: 64px;
+    height: 64px;
+    display: inline-block;
+}
+
+#actions button {
+    width: 64px;
+    height: 64px;
+    background: var(--second-contrast-15);
+    border-radius: 64px;
+    border: 0;
+    font-size: 64px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    position: relative;
+}
+
+#actions img {
+    width: 32px;
+    height: 32px;
+}
+
+#actions div:nth-of-type(2) {
+    margin: 0 23px;
+}
+
+#actions div {
+    position: relative;
+}
+
+#actions button {
+    z-index: 2;
+}
+
+.blocked img {
+    content: url(/svgs/unblock.svg);
+}
+
+#actions #follow:before,
+#actions #follow:after {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 6px;
+    border-radius: 2px;
+    background: var(--second-contrast);
+    position: absolute;
+    ;
+    transition: 1s transform
+}
+
+#actions #follow:after {
+    transform: rotate(-90deg)
+}
+
+.following:after {
+    transform: rotate(0) !important;
+}
+
+.blip {
+    pointer-events: none;
+    border-radius: 51%;
+    top: 0;
+    left: 0;
+    position: absolute !important;
+    transition: all 2.3s;
+}
+
+.following+.blip {
+    animation: bliped 2.3s forwards
+}
+
+.unfollow+.blip {
+    animation: bliped-reverse 2s forwards;
+}
+
+#filter-user-content {
+    padding: 23px 10px;
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+}
+
+
+@media screen and (min-width: 950px) {
+    #cover {
+        margin-top: 10px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px
+    }
+
+    .distribution-stats .l2g {
+        border-bottom-left-radius: 10px;
+    }
+
+    .distribution-stats .s2e {
+        border-bottom-right-radius: 10px;
+    }
+}

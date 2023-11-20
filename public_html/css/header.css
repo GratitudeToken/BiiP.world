@@ -1,0 +1,147 @@
+#main_header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 690px;
+    margin: 0 auto;
+    padding-bottom: 23px;
+    padding: 8px 0 5px 5px;
+    background: var(--main-contrast-99);
+    backdrop-filter: blur(9px);
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 11;
+    pointer-events: none;
+}
+
+#main_header * {
+    pointer-events: all;
+}
+
+.main-header {
+    z-index: 10;
+}
+
+#add {
+    font-size: 32px;
+    color: var(--main-contrast);
+    background: var(--main-color-dark);
+    -webkit-tap-highlight-color: transparent;
+    border: 0;
+    width: 32px;
+    height: 32px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border-radius: 32px;
+    transition: all 0.69s
+}
+
+
+#add:hover {
+    transform: rotate(720deg);
+    background: var(--main-color);
+    border-radius: 5px;
+}
+
+#add img {
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+
+#user-menu {
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+}
+
+.avatar-container,
+.post-thumbnail {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    margin: -4px 0 0 5px;
+    border-radius: 51%;
+    overflow: hidden;
+    position: relative;
+    z-index: 3;
+    cursor: pointer
+}
+
+.avatar,
+.p-thumb {
+    width: 32px;
+    display: block;
+    border: 0;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+#menu-options,
+.post-options {
+    min-width: 160px;
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    padding: 5px;
+    border-radius: 5px;
+    background: var(--menu-button);
+    border: 0;
+    box-shadow: 0 0 15px var(--menu-options-shadow);
+    text-align: left;
+    z-index: 2;
+}
+
+#user-menu:hover #menu-options,
+.dots:checked+.post-options {
+    display: block;
+}
+
+.post-options {
+    min-width: auto;
+    list-style: none;
+    top: 0px;
+    right: 40px;
+}
+
+.authenticated #menu-options {
+    top: 9px
+}
+
+#menu-options button,
+.post-options li {
+    border-radius: 5px;
+    width: 100%;
+    border: 0;
+    padding: 18px 10px;
+    background: var(--menu-button);
+    text-align: left;
+    cursor: pointer;
+    color: #000000;
+    font-size: 14px
+}
+
+#menu-options img {
+    margin-right: 5px;
+}
+
+#menu-options button:hover,
+.post-options li:hover {
+    background: var(--menu-button-hover);
+    border-radius: 5px
+}
+
+#login span {
+    vertical-align: middle;
+}
