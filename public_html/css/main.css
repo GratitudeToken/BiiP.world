@@ -90,6 +90,7 @@ audio {
   text-align: left;
   background-color: var(--text);
   padding: 23px;
+  margin: 0;
   color: #232323;
   font-size: 14px;
 }
@@ -150,31 +151,35 @@ audio {
   margin: 23px 0 10px 0
 }
 
-.funding {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 10px;
+.post-actions {
+  padding: 10px 20px 0 0;
+  width: 100vw;
+  overflow-x: scroll;
+  white-space: nowrap;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-.funding button {
+.post-actions button {
   background: var(--second-contrast-15);
   background-blend-mode: color;
   font-family: 'Dosis', Arial, sans-serif;
   cursor: pointer;
   border: 0;
   padding: 8px 16px;
-  margin-top: 5px;
+  margin: 10px 3px 0 3px;
   text-align: center;
   display: inline-block;
   font-weight: bold;
-  border-radius: 10px;
-  transition: 0.23s background-color
+  border-radius: 50px;
+  transition: 0.23s background-color;
 }
 
 .like2give {
   padding: 0 0 10px 10px;
   text-align: center;
   color: #db463e;
+  margin-left: 0 !important
 }
 
 .like2give:hover {
@@ -191,17 +196,19 @@ audio {
   background-color: #3e8fdb50;
 }
 
-.post-actions img {
-  cursor: pointer;
-  transition: transform 0.23s;
-  z-index: 2;
-  margin: 10px 5px;
-  filter: var(--invert1)
+.conversation img,
+.categorize img,
+.copy_url img {
+  filter: var(--invert1) !important
 }
 
-.virality,
-.repin {
+.virality img,
+.autorepin img {
   filter: var(--invert2) !important
+}
+
+.virality {
+  margin-right: 0 !important
 }
 
 .dots-label {
@@ -357,10 +364,6 @@ audio {
   /* Firefox */
 }
 
-#dm .discussion::-webkit-scrollbar {
-  display: none;
-}
-
 #dm .discussion h3 {
   padding-top: 50px
 }
@@ -445,6 +448,7 @@ audio {
 
 .me {
   margin: 10px 10px 0 0;
+  border-top-right-radius: 10px;
 }
 
 .author .small_avatar,
@@ -533,6 +537,11 @@ audio {
   article {
     padding: 23px 0;
     background: none;
+  }
+
+  .post-actions {
+    padding: 10px 0 0 0;
+    width: auto;
   }
 
   video {

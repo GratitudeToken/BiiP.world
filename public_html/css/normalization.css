@@ -44,7 +44,11 @@ body p {
 #posting input[type=checkbox],
 .type input,
 #notifications-list,
-#notifications_category input {
+#notifications_category input,
+#messages-container .me .small_avatar,
+.post-actions::-webkit-scrollbar,
+#dm .discussion::-webkit-scrollbar,
+#previous_posts::-webkit-scrollbar {
     display: none
 }
 

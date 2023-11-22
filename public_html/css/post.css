@@ -24,10 +24,6 @@
     left: 80px
 }
 
-#previous_posts::-webkit-scrollbar {
-    display: none;
-}
-
 #previous_posts a,
 #previous_posts a:visited {
     display: block;
