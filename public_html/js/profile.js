@@ -1,14 +1,25 @@
 import { $ } from '/js/selectors.js';
 import { pop_it } from '/js/shortMessage.js';
-import { soundsPush } from '/js/sounds-preloading.js';
+import { defaultSounds } from '/js/sounds-preloading.js';
 
-let sounds = soundsPush('lucianape3', ['like.mp3'])
+$('#soundSwitch').addEventListener('change', e => {
+    if ($('#soundSwitch').checked === true) {
+        localStorage.setItem('sound', 1)
+    } else {
+        localStorage.removeItem('sound')
+    }
+})
+
+//set checkbox based on localStorage
+localStorage.getItem('sound') === '1' ? $('#soundSwitch').checked = true : $('#soundSwitch').checked = false;
+
 const follow = $('#follow')
 const block = $('#block')
 const username = $('.username')
 
 $('.profile_pic') ? $('.profile_pic').addEventListener('mousedown', e => {
-    sounds[0].play();
+    const sounds = defaultSounds('lucianape3', null, null)
+    sounds ? sounds[6].play() : null
 }) : null;
 
 if (follow) {

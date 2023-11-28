@@ -78,6 +78,10 @@
     cursor: pointer
 }
 
+.avatar-container {
+    margin-right: 10px;
+}
+
 .avatar,
 .p-thumb {
     width: 32px;
@@ -88,12 +92,11 @@
 }
 
 
-#menu-options,
-.post-options {
+#menu-options {
     min-width: 160px;
     position: absolute;
     top: 12px;
-    right: 16px;
+    right: 3px;
     padding: 5px;
     border-radius: 5px;
     background: var(--menu-button);
@@ -103,24 +106,15 @@
     z-index: 2;
 }
 
-#user-menu:hover #menu-options,
-.dots:checked+.post-options {
+#user-menu:hover #menu-options {
     display: block;
-}
-
-.post-options {
-    min-width: auto;
-    list-style: none;
-    top: 0px;
-    right: 40px;
 }
 
 .authenticated #menu-options {
     top: 9px
 }
 
-#menu-options button,
-.post-options li {
+#menu-options button {
     border-radius: 5px;
     width: 100%;
     border: 0;
@@ -136,8 +130,7 @@
     margin-right: 5px;
 }
 
-#menu-options button:hover,
-.post-options li:hover {
+#menu-options button:hover {
     background: var(--menu-button-hover);
     border-radius: 5px
 }

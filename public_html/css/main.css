@@ -35,7 +35,7 @@ article {
 article header {
   margin-bottom: 10px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: flex-start;
   position: relative;
 }
@@ -57,6 +57,20 @@ article a:visited {
   border-radius: 32px
 }
 
+.post_virality {
+  height: 32px;
+  border-radius: 32px;
+  margin-right: 5px;
+  font-weight: bold;
+  font-family: 'Dosis', Arial, sans-serif;
+  font-size: 16px;
+  color: var(--second-contrast);
+}
+
+.post_virality img {
+  margin-right: 6px;
+}
+
 .content {
   border-radius: 10px;
 }
@@ -64,6 +78,7 @@ article a:visited {
 .content_type {
   font-size: 23px;
   font-family: 'Dosis', Arial, sans-serif !important;
+  text-transform: uppercase;
   padding: 10px 0 23px 0;
 }
 
@@ -161,12 +176,14 @@ audio {
 }
 
 .post-actions button {
+  height: 32px;
+  line-height: 32px;
   background: var(--second-contrast-15);
   background-blend-mode: color;
   font-family: 'Dosis', Arial, sans-serif;
   cursor: pointer;
   border: 0;
-  padding: 8px 16px;
+  padding: 0 16px;
   margin: 10px 3px 0 3px;
   text-align: center;
   display: inline-block;
@@ -175,40 +192,43 @@ audio {
   transition: 0.23s background-color;
 }
 
-.like2give {
-  padding: 0 0 10px 10px;
-  text-align: center;
+.post-actions .like2give {
+  padding: 0 16px 10px 40px;
+  background: var(--second-contrast-15) url('/svgs/like.svg') no-repeat 16px 50%;
+  background-size: 19px 19px;
   color: #db463e;
   margin-left: 0 !important
 }
 
-.like2give:hover {
+.post-actions .like2give:hover {
   background-color: #db463e50;
 }
 
-.share2earn {
-  padding: 0 10px 10px 0;
-  text-align: center;
+.post-actions .share2earn {
+  padding: 0 16px 10px 40px;
+  background: var(--second-contrast-15) url('/svgs/share.svg') no-repeat 16px 50%;
+  background-size: 19px 19px;
   color: #3e8fdb;
 }
 
-.share2earn:hover {
+.post-actions .share2earn:hover {
   background-color: #3e8fdb50;
 }
 
-.conversation img,
+.comments img,
 .categorize img,
 .copy_url img {
   filter: var(--invert1) !important
 }
 
-.virality img,
+.edit img,
 .autorepin img {
   filter: var(--invert2) !important
 }
 
-.virality {
-  margin-right: 0 !important
+.categorize img,
+.edit img {
+  margin-top: 1px
 }
 
 .dots-label {
@@ -256,6 +276,96 @@ audio {
 
 .showMessage {
   animation: showMessage 3s forwards
+}
+
+
+/* Search */
+
+#search_container {
+  width: 100%;
+  position: fixed;
+  top: calc(50% - 32px);
+  left: 0;
+  z-index: 1;
+}
+
+body.showSearch #search_container {
+  display: block !important
+}
+
+#search_container form {
+  width: 80%;
+  max-width: 444px;
+  position: relative;
+  margin: 0 auto
+}
+
+#search_container input {
+  display: inline-block;
+  width: 100%;
+  border-radius: 68px;
+  font-size: 23px;
+  font-weight: bold;
+  padding: 18px 5px 18px 5px;
+  text-align: center;
+  background: var(--main-contrast);
+  color: var(--main-color);
+  backdrop-filter: blur(6px);
+  font-family: 'Roboto', Arial, sans-serif;
+  transition: 0.23s all
+}
+
+#searchThis {
+  padding-right: 64px !important;
+  border: 2px solid var(--second-contrast);
+}
+
+#searchThis:focus {
+  background: var(--main-contrast);
+  border-color: var(--main-color);
+}
+
+#searchThis::placeholder {
+  color: var(--second-contrast)
+}
+
+#search_container input[type=submit] {
+  width: 60px;
+  height: 60px;
+  border-radius: 32px;
+  background: var(--main-color) url(/svgs/search.svg) no-repeat 50% 50%;
+  background-size: 32px 32px;
+  border: 0;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  cursor: pointer;
+}
+
+#search_container input[type=submit]:hover {
+  background-color: var(--main-color)
+}
+
+.results {
+  margin-top: 15px
+}
+
+.results span {
+  display: inline-block;
+  padding: 6px 12px;
+  background: var(--second-contrast);
+  color: var(--main-contrast);
+  border-radius: 23px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  user-select: none;
+  transition: 0.23s background-color
+}
+
+.results span:hover {
+  color: var(--main-contrast);
+  background: var(--main-color)
 }
 
 

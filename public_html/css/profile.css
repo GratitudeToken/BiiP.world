@@ -50,11 +50,30 @@
     opacity: 0.69
 }
 
+.user_name+b small {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-right: 3px;
+    border-radius: 16px;
+    background: var(--second-contrast-15);
+    color: var(--second-contrast) !important
+}
+
+#soundSwitch+img {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#soundSwitch:checked+img {
+    content: url('/svgs/sound-on.svg')
+}
+
 
 .send,
 .username,
 .holdings {
     display: inline-block;
+    height: 32px;
     padding: 8px 16px;
     margin: 8px;
     border-radius: 10px;
@@ -92,10 +111,11 @@
 .holdings:visited {
     color: #db463e;
     margin-left: 0;
-    padding: 9px 16px;
+    padding: 11px 16px 9px 16px;
     text-decoration: none;
     font-weight: bold;
     font-family: 'Dosis', Arial, sans-serif;
+    vertical-align: bottom;
 }
 
 .holdings:after {

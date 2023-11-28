@@ -42,18 +42,18 @@
     <meta name="twitter:site" content="@Gratitude_World">
     <meta name="twitter:creator" content="@Lucian_Apetrei">
 
-    <title>Lucian Apetrei - Profile.</title>
+    <title>Web 3 starts here.</title>
 
     <!-- Style -->
     <link class="themeCSS" rel="stylesheet" href="/css/default-theme.css">
     <script type="module" src="/js/theme.js"></script>
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/profile.css">
     <link rel="canonical" href="https://biip.world" />
 </head>
 
 <body>
+    <input id="themeSwitch" type="checkbox">
     <div id="loader"></div>
     <div class="shortMessage flex justify-start">
         <img class="XL-icon" />
@@ -144,11 +144,9 @@
                     interactive.
                 </p>
                 <p class="me">
-                    <a class="small_avatar" href="/profile.html"><img src="/avatars/dyablohunter.webp" /></a>
                     That's amazing. Do you think you can add more sounds to the app?
                 </p>
                 <p class="me">
-                    <a class="small_avatar" href="/profile.html"><img src="/avatars/dyablohunter.webp" /></a>
                     I enjoy the copy pasta sound when I copy a username from someone's profile.
                 </p>
                 <p class="interlocutor">
@@ -160,7 +158,6 @@
                     All suggestions are welcome.
                 </p>
                 <p class="me">
-                    <a class="small_avatar" href="/profile.html"><img src="/avatars/dyablohunter.webp" /></a>
                     should we also add sent / received / seen status and timestamps?
                 </p>
                 <p class="interlocutor">
@@ -176,11 +173,9 @@
                     interactive.
                 </p>
                 <p class="me">
-                    <a class="small_avatar" href="/profile.html"><img src="/avatars/dyablohunter.webp" /></a>
                     That's amazing. Do you think you can add more sounds to the app?
                 </p>
                 <p class="me">
-                    <a class="small_avatar" href="/profile.html"><img src="/avatars/dyablohunter.webp" /></a>
                     I enjoy the copy pasta sound when I copy a username from someone's profile.
                 </p>
                 <p class="interlocutor">
@@ -192,7 +187,6 @@
                     All suggestions are welcome.
                 </p>
                 <p class="me">
-                    <a class="small_avatar" href="/profile.html"><img src="/avatars/dyablohunter.webp" /></a>
                     should we also add sent / received / seen status and timestamps?
                 </p>
                 <p class="interlocutor">
@@ -208,11 +202,9 @@
                     interactive.
                 </p>
                 <p class="me">
-                    <a class="small_avatar" href="/profile.html"><img src="/avatars/dyablohunter.webp" /></a>
                     That's amazing. Do you think you can add more sounds to the app?
                 </p>
                 <p class="me">
-                    <a class="small_avatar" href="/profile.html"><img src="/avatars/dyablohunter.webp" /></a>
                     I enjoy the copy pasta sound when I copy a username from someone's profile.
                 </p>
                 <p class="interlocutor">
@@ -224,7 +216,6 @@
                     All suggestions are welcome.
                 </p>
                 <p class="me">
-                    <a class="small_avatar" href="/profile.html"><img src="/avatars/dyablohunter.webp" /></a>
                     should we also add sent / received / seen status and timestamps?
                 </p>
                 <p class="interlocutor">
@@ -240,11 +231,9 @@
                     interactive.
                 </p>
                 <p class="me">
-                    <a class="small_avatar" href="/profile.html"><img src="/avatars/dyablohunter.webp" /></a>
                     That's amazing. Do you think you can add more sounds to the app?
                 </p>
                 <p class="me">
-                    <a class="small_avatar" href="/profile.html"><img src="/avatars/dyablohunter.webp" /></a>
                     I enjoy the copy pasta sound when I copy a username from someone's profile.
                 </p>
                 <p class="interlocutor">
@@ -256,7 +245,6 @@
                     All suggestions are welcome.
                 </p>
                 <p class="me">
-                    <a class="small_avatar" href="/profile.html"><img src="/avatars/dyablohunter.webp" /></a>
                     should we also add sent / received / seen status and timestamps? Also, how about adding online and
                     away
                     status small circles with simple colors for more info.
@@ -284,16 +272,16 @@
         <form id="posting-form">
             <div class="type flex-center">
                 <input id="post_videos" type="radio" name="post-type" />
-                <label for="post_videos" title="Videos"><img class="M-icon invert-2" src="/svgs/video.svg" /></label>
+                <label for="post_videos" title="Videos"><img class="S-icon invert-2" src="/svgs/video.svg" /></label>
 
                 <input id="post_images" type="radio" name="post-type" />
-                <label for="post_images" title="Images"><img class="M-icon invert-2" src="/svgs/image.svg" /></label>
+                <label for="post_images" title="Images"><img class="S-icon invert-2" src="/svgs/image.svg" /></label>
 
                 <input id="post_audio" type="radio" name="post-type" />
-                <label for="post_audio" title="Audio"><img class="M-icon invert-2" src="/svgs/music.svg" /></label>
+                <label for="post_audio" title="Audio"><img class="S-icon invert-2" src="/svgs/music.svg" /></label>
 
                 <input id="post_item" type="radio" name="post-type" />
-                <label for="post_item" title="Selling"><img class="M-icon invert-2" src="/svgs/cart.svg" /></label>
+                <label for="post_item" title="Selling"><img class="S-icon invert-2" src="/svgs/cart.svg" /></label>
             </div>
             <textarea placeholder="Post what now? ..."></textarea>
             <div id="buttonz" class="flex justify-between">
@@ -322,6 +310,8 @@
                         <button id="index" class="index" title="Home"><img class="M-icon invert-1" alt="Timeline"
                                 src="/svgs/biip-logo.svg" />
                             <span>Home</span></button>
+                        <button id="profile" class="profile" title="Manage Profile"><img class="M-icon"
+                                alt="Manage Profile" src="/svgs/user.svg" /> <span>Profile</span></button>
                         <button id="messages" class="messages" title="Messages"><img class="M-icon invert-1"
                                 src="/svgs/chat.svg">
                             <span>Messages</span></button>
@@ -329,6 +319,7 @@
                         <button id="login" class="login" title="Connect Account"><img class="M-icon"
                                 alt="Connect wallet - Unlocked" src="/svgs/qr.svg" /> <span>Connect
                                 wallet</span></button>
+                        <!-- For internal MVP proton authentication is enough. But we need to consider interoperability from the beginning in the UX, so people can see the intention. For example, the 10 second video is the most important piece, it's your identity, but we need to make sure when someone registers they can see XPR network is selected for authentication and in the future they may be coming from other blockchains as well, so the identity is the 10 second video, associated with the XPR username, but the identity can be re-assigned to another blockchain address (and if you do this, you cannot re-assign to another blockchain for at least 24 hours or more to avoid abuse of this feature) -->
                         <button id="logout" title="Disconnect Account"><img class="M-icon"
                                 alt="Disconnect wallet - Locked" src="/svgs/locked.svg" /> Disconnect</button>
                     </div>
@@ -395,111 +386,28 @@
             </div>
         </div>
     </header>
+    <div id="subheader" class="flex-center">
+        <nav>
+            <form id="filters">
+                <input id="mixed" type="radio" name="filters" checked />
+                <label for="mixed" title="Mixed"><img class="invert1 inline-block" src="/svgs/mixed.svg" /></label>
+                <input id="videos" type="radio" name="filters" />
+                <label for="videos" title="Videos"><img class="invert1 inline-block" src="/svgs/video.svg" /></label>
+                <input id="images" type="radio" name="filters" />
+                <label for="images" title="Images"><img class="invert1 inline-block" src="/svgs/image.svg" /></label>
+                <input id="audio" type="radio" name="filters" />
+                <label for="audio" title="Audio"><img class="invert1 inline-block" src="/svgs/music.svg" /></label>
+                <input id="text" type="radio" name="filters" />
+                <label for="text" title="Text"><img class="invert1 inline-block" src="/svgs/text.svg" /></label>
+                <input id="people" type="radio" name="filters" />
+                <label for="people" title="People"><img class="invert1 inline-block" src="/svgs/user.svg" /></label>
+                <input id="markets" type="radio" name="filters" />
+                <label for="markets" title="Markets"><img class="invert1 inline-block" src="/svgs/cart.svg" /></label>
+            </form>
+        </nav>
+    </div>
 
     <main class="maxw-690">
-        <div id="cover" style="background: url(/covers/1.jpg) no-repeat 50% 50%; background-size: cover">
-            <div class="monarch">
-                <div class="butterfly">
-                    <div class="butterfly-turn">
-                        <div class="butterfly-flutter"></div>
-                    </div>
-                </div>
-
-                <div class="butterfly">
-                    <div class="butterfly-turn">
-                        <div class="butterfly-flutter"></div>
-                    </div>
-                </div>
-
-                <div class="butterfly">
-                    <div class="butterfly-turn">
-                        <div class="butterfly-flutter"></div>
-                    </div>
-                </div>
-            </div>
-            <img class="profile_pic" title="Play Me" src="/avatars/dyablohunter.webp" />
-            <div class="circle-glow">
-                <img class="img0" src="/img/circle0.png" loading="lazy" alt="dots circle">
-                <img class="img1" src="/img/circle1.png" loading="lazy" alt="dots glowing circle">
-            </div>
-            <!-- These effects like circle-glow and butterfly can be NFT's, the user can set one of them if he owns it. Selecting an NFT
-            loads the correct animation or effect from the server. Can also contain sound effects. -->
-        </div>
-        <div class="distribution-stats grid2x2 gap10">
-            <span class="l2g" title="Tokens Received"><img class="S-icon" src="/svgs/like.svg" /> 6,900</span>
-            <span class="s2e" title="Tokens distributed"><img class="S-icon" src="/svgs/share.svg" /> 15,000</span>
-        </div>
-        <button class="send" title="Send GRAT"><img class="S-icon" src="/svgs/gratitude-token-logo.svg" /><img
-                class="M-icon" src="/svgs/arrow-right.svg" /></button>
-        <button class="username" title="Copy URL">@lucian</button>
-        <a class="holdings" title="GRAT holdings" href="https://explorer.xprnetwork.org/account/grat"
-            target="_blank">23.000</a>
-        <h1 class="user_name" title="Full Name"><span>The Monarch Butterfly</span></h1>
-        <b title="Who do you want to be?"><small>Level 23</small> Creator of butterflies</b>
-        <p id="living" title="Living la vida loca in?"><img class="M-icon invert2" src="/svgs/globe.svg" /> Bucharest
-        </p>
-        <div class="flex-center">
-            <label class="switch rel" title="Light / Dark">
-                <input id="themeSwitch" type="checkbox">
-                <span class="slider"></span>
-            </label>
-            <label title="Sound On / Off">
-                <input id="soundSwitch" type="checkbox">
-                <img class="M-icon" src="/svgs/sound-off.svg" />
-            </label>
-        </div>
-        <!-- The switch is displayed only on Own profile -->
-
-        <div id="actions" class="flex-center">
-            <div>
-                <button id="follow" title="Follow"></button>
-                <div class="blip"></div>
-            </div>
-            <!-- clicking following makes that beep sound and rotates the :after element back to original horizontal position so we get a minus, also make an effect like circle rippling from button. aand ... for unfollowing, reverse the effect, reverse the sound and the circle effect ripples from outside to center of button and the :after element rotates back to 90deg -->
-            <!-- Also, maybe create general effect for text modals, zoom from outside to inside the text like in BiiP
-            protocol maybe and rotate to center - copy paste? or something like youtube notification bottom-left? -->
-            <div>
-                <button id="send-msg" class="messages" title="Message">
-                    <img class="invert2" src="/svgs/chat.svg">
-                </button>
-            </div>
-            <div><button id="block" title="Block"><img class="invert2" src="/svgs/block.svg"></button>
-            </div>
-        </div>
-        <div>
-            <div class="stats grid2x2 gap10">
-                <div title="How many users follow this user">Followers<b>230,000</b></div>
-                <div title="Average monthly user reach">Reach<b>423,678</b></div>
-                <div title="How often does this user post on average">Frequency<b>daily</b></div>
-                <div
-                    title="Users sharing a post in the first 24H hours (Averaged over 30 days, relative to followers, but not limited to.)">
-                    Virality<b>23%</b></div>
-                <div
-                    title="Users sharing a post in the first week (Averaged over 30 days, relative to followers, but not limited to.)">
-                    Shareability<b>50%</b></div>
-                <div
-                    title="Users engaging in conversation in the first week (Averaged over 30 days, relative to followers, but not limited to.)">
-                    Engagement<b>32%</b>
-                </div>
-            </div>
-            <form id="filter-user-content" class="type flex-center">
-                <input id="videos" type="radio" name="filter" />
-                <label for="videos" title="Videos"><img class="S-icon invert1 inline-block" src="/svgs/video.svg" />
-                    10</label>
-                <input id="images" type="radio" name="filter" />
-                <label for="images" title="Images"><img class="S-icon invert1 inline-block" src="/svgs/image.svg" />
-                    57</label>
-                <input id="audio" type="radio" name="filter" />
-                <label for="audio" title="Audio"><img class="S-icon invert1 inline-block" src="/svgs/music.svg" />
-                    23</label>
-                <input id="text" type="radio" name="filter" />
-                <label for="text" title="Text"><img class="S-icon invert1 inline-block" src="/svgs/text.svg" />
-                    12</label>
-                <input id="selling" type="radio" name="filter" />
-                <label for="selling" title="Selling"><img class="S-icon invert1 inline-block" src="/svgs/cart.svg" />
-                    3</label>
-            </form>
-        </div>
         <h2 class="content_type">MIXED CONTENT</h2>
         <div class="posts">
             <article>
@@ -514,7 +422,12 @@
                     <div class="post_virality flex-center" title="Virality"><img class="L-icon"
                             src="/svgs/virality.svg" /> 23%</div>
                 </header>
-                <p>What are we even doing here?</p>
+
+                <p>We killed advertising and are tackling ownership, censorship and privacy. <a
+                        href="#">#TheEndofSocialMedia</a> <a href="#">#Web3</a> <a href="#">#Decentralization</a>
+                    <a href="#">#BiiP</a> <a href="#">#open-source</a> <a href="#">#AdvertisingIsDead</a>
+                </p>
+
                 <div class="content">
                     <div class="main-data-container">
                         <video controls>
@@ -536,32 +449,72 @@
                         <button class="report" title="Report"><img class="M-icon" src="/svgs/report.svg" /></button>
                         <button class="edit" title="Edit"><img class="S-icon" src="/svgs/edit.svg" /></button>
                     </div>
+
+                    <!-- Clicking on the content opens the community chat telegram style -->
+                    <!-- (replacing comments with a telegram style group chat for each user - also, sharing a
+                        post does not create a post, it just inserts a reference to the user's shared post and all stats
+                        are for the original author, there is no post inception like in Facebook) -->
+                    <!-- - Ca-Ching sound for pressing Share, cheering sound for Liking | You can
+                        only like a post once every minute, the amount cannot be higher than 10% of your Like2Give
+                        balance, the minimum is 0.00000001 GRAT - you can also topup your Like2Give balance from the main balance -->
+                    <!-- You cannot get the benefit from sharing a post again sooner than X days (set by the author, min
+                        1 day, there is no maximum.), but you can Auto-Repin as often as you want. -->
+
                 </div>
             </article>
 
             <article>
                 <header>
                     <div class="flex-center">
-                        <a class="small_avatar" href="/profile.html"><img src="/avatars/lucianape3.webp" /></a>
+                        <a class="small_avatar" href="/profile.html"><img
+                                src="https://gratitudetoken.world/img/catalina.jpg" /></a>
                         <div class="name_bio">
-                            <h3><a href="/profile.html">Lucian Apetrei @lucian</a></h3>
-                            <span class="bio">Creator of BiiP.world | Just now</span>
+                            <h3><a href="/profile.html">Catalina Benta @fatzuca</a></h3>
+                            <span class="bio">Founder at BiiP.world | 5 days ago</span>
                         </div>
                     </div>
                     <div class="post_virality flex-center" title="Virality"><img class="L-icon"
                             src="/svgs/virality.svg" /> 23%</div>
                 </header>
-                <p>We killed advertising and are tackling ownership, censorship and privacy. <a href="#">#me</a> <a
-                        href="#">#myself</a> <a href="#">#and</a> <a href="#">#irene</a> <a href="#">#web3</a> <a
-                        href="#">#decentralization</a>
-                    <a href="#">#BiiP</a> <a href="#">#open-source</a> <a href="#">#advertisingisdead</a>
-                </p>
+
                 <div class="content">
                     <div class="main-data-container">
-                        <video controls>
-                            <source src="/content/lucianape3/video/dapp.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
+                        <img class="image" src="/content/1.jpg" />
+                    </div>
+                    <div class="post-actions">
+                        <button class="like2give" title="Like2Give" data-amount="6000">6,000</button>
+                        <button class="share2earn" title="Share2Earn" data-amount="12000">12,000</button>
+                        <button class="categorize" title="Categorize"><img class="S-icon"
+                                src="/svgs/category.svg" /></button>
+                        <button class="comments" title="Comments"><img class="M-icon"
+                                src="/svgs/comment.svg" /></button>
+                        <button class="copy_url" title="Copy URL"><img class="M-icon" src="/svgs/url.svg" /></button>
+                        <button class="autorepin" title="AutoRepin"><img class="M-icon"
+                                src="/svgs/repin.svg" /></button>
+                        <button class="curate" title="Curate"><img class="M-icon" src="/svgs/check.svg" /></button>
+                        <button class="report" title="Report"><img class="M-icon" src="/svgs/report.svg" /></button>
+                        <button class="edit" title="Edit"><img class="S-icon" src="/svgs/edit.svg" /></button>
+                    </div>
+                </div>
+            </article>
+
+            <article>
+                <header>
+                    <div class="flex-center">
+                        <a class="small_avatar" href="/profile.html"><img
+                                src="https://gratitudetoken.world/img/flaviu.jpg" /></a>
+                        <div class="name_bio">
+                            <h3><a href="/profile.html">Flaviu Cristian @abubfc</a></h3>
+                            <span class="bio">Random Bio or Title | 7 days ago</span>
+                        </div>
+                    </div>
+                    <div class="post_virality flex-center" title="Virality"><img class="L-icon"
+                            src="/svgs/virality.svg" /> 23%</div>
+                </header>
+
+                <div class="content">
+                    <div class="main-data-container">
+                        <img class="image" src="/content/6.jpg" />
                     </div>
                     <div class="post-actions">
                         <button class="like2give" title="Like2Give" data-amount="6000">6,000</button>
@@ -590,15 +543,15 @@
                         </div>
                     </div>
                     <div class="post_virality flex-center" title="Virality"><img class="L-icon"
-                            src="/svgs/virality.svg" /> 23%
-                    </div>
+                            src="/svgs/virality.svg" /> 23%</div>
                 </header>
 
-                <div class="content">
+                <div class="content audio">
                     <div class="main-data-container">
-                        <p>We're building it. Will you come?
-                        </p>
-                        <img class="image" src="/content/lucianape3/image/buildit.jpg" />
+                        <audio controls>
+                            <source src="/content/lucianape3/sound/Gratitude.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
                     </div>
                     <div class="post-actions">
                         <button class="like2give" title="Like2Give" data-amount="6000">6,000</button>
@@ -644,12 +597,13 @@
                             This is Web 3 content on a Web 3 network, Web 2 is Game Over.
 
                             It's beyond censorship, where the people of each country and community are their own
-                            curators and gain reputation, they can collectively curate anything and everything published
-                            in their countries and communities.
+                            curators and gain reputation, they
+                            can collectively curate anything and everything published in their countries and
+                            communities.
 
                             This is giving the say back to the people, this is finally a true democracy, where wealth
-                            and exposure are shared fairly, or as some on the other side would say, equal power and
-                            influence.
+                            and exposure are shared
+                            fairly, or as some on the other side would say, equal power and influence.
 
                             Advertising is not the only thing we are decentralizing.
 
@@ -684,6 +638,7 @@
                 </div>
             </article>
 
+
             <article>
                 <header>
                     <div class="flex-center">
@@ -695,79 +650,6 @@
                     </div>
                     <div class="post_virality flex-center" title="Virality"><img class="L-icon"
                             src="/svgs/virality.svg" /> 23%</div>
-                </header>
-
-                <div class="content text">
-                    <div class="main-data-container">
-                        <p>[ ! ] First I should make clear that we develop and release software that must abide by the
-                            following principles:
-
-
-                            • DECENTRALIZED CODE (OPEN SOURCE GPL 3.0).
-
-                            • DECENTRALIZED INFRASTRUCTURE.
-
-                            • DECENTRALIZED BUSINESS MODELS.
-
-                            • NEVER USE DARK PATTERN DESIGN.
-
-                            • THE BIOSPHERE HAS PRIORITY OVER TECHNOLOGY.
-
-                            ☯︎ Our mission with this project is to help users gain a lot of value quickly and let them
-                            keep half of it, while enabling them to distribute the other half to others, unlike "Social"
-                            media platforms where users are prisoners in echo chambers and filter bubbles and they are
-                            considered a resource to be exploited in numerous ways.
-
-                            We will actually give them value, not take it from them. Our filters will be tools not baits
-                            and our recommendations will come from each other, not from algorithms.
-
-                            We are doing our best to help people be more productive and at the same time find what they
-                            came for quickly.
-
-                            This is why sending push notifications constantly to them will not be in our agenda.
-
-                            The users will only receive a daily push notification, a counter of how many new
-                            notifications the user has until that fixed daily hour, plus maybe some security / action
-                            push notifications.
-
-
-                            In the notifications modal/screen, a user should in a few seconds become well informed,
-                            before choosing to engage.
-
-                            We will do our best to find the sweetspot of how much time a user should spend in our dApp,
-                            ideally users who spend more time using it should gain more from it.
-                        </p>
-                        <!-- For text, we should do a system that divides all text into pages automatically (user can choose from 3 sized pages) and you can swipe between the pages if there is text for more than 1 page. -->
-                    </div>
-                    <div class="post-actions">
-                        <button class="like2give" title="Like2Give" data-amount="6000">6,000</button>
-                        <button class="share2earn" title="Share2Earn" data-amount="12000">12,000</button>
-                        <button class="categorize" title="Categorize"><img class="S-icon"
-                                src="/svgs/category.svg" /></button>
-                        <button class="comments" title="Comments"><img class="M-icon"
-                                src="/svgs/comment.svg" /></button>
-                        <button class="copy_url" title="Copy URL"><img class="M-icon" src="/svgs/url.svg" /></button>
-                        <button class="autorepin" title="AutoRepin"><img class="M-icon"
-                                src="/svgs/repin.svg" /></button>
-                        <button class="curate" title="Curate"><img class="M-icon" src="/svgs/check.svg" /></button>
-                        <button class="report" title="Report"><img class="M-icon" src="/svgs/report.svg" /></button>
-                        <button class="edit" title="Edit"><img class="S-icon" src="/svgs/edit.svg" /></button>
-                    </div>
-                </div>
-            </article>
-
-            <article>
-                <header>
-                    <div class="flex-center">
-                        <a class="small_avatar" href="/profile.html"><img src="/avatars/lucianape3.webp" /></a>
-                        <div class="name_bio">
-                            <h3><a href="/profile.html">Lucian Apetrei @lucian</a></h3>
-                            <span class="bio">Creator of BiiP.world | Just now</span>
-                        </div>
-                    </div>
-                    <div class="post_virality flex-center" title="Virality"><img class="L-icon"
-                            src="/svgs/virality.svg" /> 23%
-                    </div>
                 </header>
 
                 <div class="content">
@@ -814,8 +696,7 @@
                         </div>
                     </div>
                     <div class="post_virality flex-center" title="Virality"><img class="L-icon"
-                            src="/svgs/virality.svg" /> 23%
-                    </div>
+                            src="/svgs/virality.svg" /> 23%</div>
                 </header>
 
                 <div class="content text">
@@ -835,7 +716,7 @@
                             body with unruly and destructive habits.
 
                             If you do too much physical activity and leave no space for thinking, your body suffocates
-                            your mind with addictions, an artificial-chemical alternative (physical consumption) to what
+                            your mind with addictions, an artificial chemical alternative (physical consumption) to what
                             chemicals created by our brain through Real Life social interaction are for.
 
                             Duality means to compromise, to give both half of your energy.
@@ -862,6 +743,9 @@
                     </div>
                 </div>
             </article>
+
+            <img class="post-img hide" src="/content/charlie.webp" />
+        </div>
     </main>
     <div id="search_container">
         <form>
@@ -886,7 +770,6 @@
     <script src="https://unpkg.com/@proton/web-sdk@4.2.15"></script>
     <script type="module" src="/js/proton.js"></script>
     <script type="module" src="/js/main.js"></script>
-    <script type="module" src="/js/profile.js"></script>
 </body>
 
 </html>

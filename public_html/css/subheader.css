@@ -10,8 +10,9 @@
 }
 
 #filters {
-    padding: 12px 0 23px 0;
+    padding: 12px 10px 23px 10px;
     display: grid;
+    gap: 2px;
     grid-template-rows: repeat(1, 1fr);
     grid-template-columns: repeat(7, 1fr);
 }
@@ -21,7 +22,7 @@
 }
 
 #filters label {
-    margin: 10%;
+    margin: 2%;
     border-radius: 51%;
     cursor: pointer;
     background: var(--second-contrast-15);

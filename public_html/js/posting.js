@@ -1,7 +1,6 @@
 import { $, $$ } from '/js/selectors.js';
-import { soundsPush } from '/js/sounds-preloading.js';
+import { defaultSounds } from '/js/sounds-preloading.js';
 
-let sounds = soundsPush('lucianape3', ['click.mp3', 'send.mp3', 'message.mp3', 'message-reverse.mp3'])
 const postBTN = $('#post-btn')
 
 export const posting = () => {
@@ -19,6 +18,7 @@ export const posting = () => {
         // </form>
         // `
         $('#posting').style.display = 'block'
+        let sounds = defaultSounds('lucianape3', null, null)
         sounds[1].play()
     })
 

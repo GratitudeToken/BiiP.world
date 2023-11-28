@@ -1,33 +1,45 @@
 import { $, $$ } from '/js/selectors.js';
 import { pop_it } from '/js/shortMessage.js';
-import { soundsPush } from '/js/sounds-preloading.js';
+import { defaultSounds } from '/js/sounds-preloading.js';
 import { posting } from '/js/posting.js';
+import { smallRandom } from '/js/random.js';
+
 posting()
 
-let sounds = soundsPush('lucianape3', ['click.mp3', 'send.mp3', 'message.mp3', 'message-reverse.mp3', 'inspect.mp3', 'bell.mp3'])
+let sounds = defaultSounds('lucianape3', null, null)
 
-$('.dots') ? $$('.dots').forEach(el => { el.addEventListener('click', e => { sounds[4].play() }) }) : null;
+$('#filters') ? $('#filters').addEventListener('change', e => {
+    $('.content_type').innerHTML = $('#filters input[name="filters"]:checked + label').getAttribute('title')
+}) : null;
 
 $$('.messages').forEach(el => {
     el.addEventListener('click', e => {
-        $('#messages-container').classList.add('showMessages')
+        $('#messages-container').classList.add('showMessages');
         $('body').style.overflow = 'hidden';
         $('#dm .discussion').scrollTo(0, document.body.scrollHeight);
-        sounds[2].play();
+        sounds = defaultSounds('lucianape3', null, null)
+        sounds ? sounds[2].play() : null; // 'message.mp3';
     })
 })
 
 
 $('#user-menu .avatar-container') ? $('#user-menu .avatar-container').addEventListener('click', e => {
     $('#notifications').classList.remove('showNotifications')
-    sounds[4].play();
+    sounds = defaultSounds('lucianape3', null, null)
+    sounds ? sounds[4].play() : null; // 'inspect.mp3'
 }) : null;
 
 $('#notifications') ? $('#notifications').addEventListener('click', e => {
-    sounds[5].currentTime = 0;
-    sounds[5].play();
+    sounds = defaultSounds('lucianape3', null, null)
+    if (sounds) {
+        sounds[5].currentTime = 0;
+        sounds[5].play(); // 'bell.mp3'
+    }
+
     $('#notifications').classList.toggle('showNotifications')
 }) : null;
+
+
 
 $('.messages_header header').addEventListener('click', e => {
     $('.messages_from').style = 'left: 0'
@@ -40,31 +52,40 @@ $('#dm').addEventListener('click', e => {
 $('#messages-container .close').addEventListener('click', e => {
     $('#messages-container').classList.remove('showMessages');
     $('body').style.overflow = ''
-    sounds[3].play();
+    sounds = defaultSounds('lucianape3', null, null)
+    if (sounds) {
+        sounds[3].play(); // 'message-reverse.mp3'
+    }
+
 })
 
-$('#biip-btn').addEventListener('click', e => { window.location = "/"; })
+$('#timeline').addEventListener('click', e => { window.location = "/timeline.html"; })
 
 $('#search-btn').addEventListener('click', e => {
-    sounds[1].play()
-    alert('Search feature is free to take. Branch name should be "/feature-search".')
+    sounds = defaultSounds('lucianape3', null, null)
+    if (sounds) {
+        sounds[4].play(); // 'inspect.mp3'
+    }
+    $('body').classList.toggle('showSearch')
 })
 
 
 $$('.share2earn').forEach(el => {
-    pop_it(el, null, null, ['/svgs/share.svg'], '#3e8fdb', ['You gained 1 GRAT'], ['share'], 'lucianape3', true)
+    const text = [`You earned ${smallRandom(0.01, 5)} GRAT.`];
+    pop_it(el, null, null, ['/svgs/share.svg'], '#3e8fdb', text, ['share'], 'lucianape3', false)
 })
 
 $$('.like2give').forEach(el => {
-    pop_it(el, null, null, ['/svgs/like.svg'], '#db463e', ['You distributed 1 GRAT'], ['like'], 'lucianape3', true)
+    const text = [`You shared ${smallRandom(0.01, 5)} GRAT.`];
+    pop_it(el, null, null, ['/svgs/like.svg'], '#db463e', text, ['like'], 'lucianape3', false)
 })
 
 $('#profile') ? $('#profile').addEventListener('click', e => { window.location = "/profile.html"; }) : null;
 
 
-$('#world') ? $('#world').addEventListener('click', e => { window.location = "/status.html" }) : null;
+$('#index') ? $('#index').addEventListener('click', e => { window.location = "/" }) : null;
 
-$$('.conversation').forEach(el => {
+$$('.comments').forEach(el => {
     el.addEventListener('click', e => {
         window.location = "/post.html";
     })

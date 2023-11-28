@@ -321,13 +321,14 @@
                             src="/avatars/dyablohunter.webp" />
                     </div>
                     <div id="menu-options">
+                        <button id="index" class="index" title="Home"><img class="M-icon invert-1" alt="Timeline"
+                                src="/svgs/biip-logo.svg" />
+                            <span>Home</span></button>
                         <button id="profile" class="profile" title="Manage Profile"><img class="M-icon"
                                 alt="Manage Profile" src="/svgs/user.svg" /> <span>Profile</span></button>
                         <button id="messages" class="messages" title="Messages"><img class="M-icon invert-1"
                                 src="/svgs/chat.svg">
                             <span>Messages</span></button>
-                        <button id="world" class="world" title="World Status"><img class="M-icon invert-1"
-                                alt="World Status" src="/svgs/biip-logo.svg" /> <span>World Status</span></button>
                         <!-- Hide login button when authenticated. -->
                         <button id="login" class="login" title="Connect Account"><img class="M-icon"
                                 alt="Connect wallet - Unlocked" src="/svgs/qr.svg" /> <span>Connect
@@ -422,19 +423,15 @@
         <div id="conversation">
             <article>
                 <header>
-                    <a class="small_avatar" href="/profile.html"><img src="/avatars/lucianape3.webp" /></a>
-                    <div class="name_bio">
-                        <h3><a href="/profile.html">Lucian Apetrei @lucian</a></h3>
-                        <span class="bio">Creator of BiiP.world | Just now</span>
+                    <div class="flex-center">
+                        <a class="small_avatar" href="/profile.html"><img src="/avatars/lucianape3.webp" /></a>
+                        <div class="name_bio">
+                            <h3><a href="/profile.html">Lucian Apetrei @lucian</a></h3>
+                            <span class="bio">Creator of BiiP.world | Just now</span>
+                        </div>
                     </div>
-                    <label class="dots-label" for="post-1"></label>
-                    <input id="post-1" type="checkbox" class="dots" />
-                    <ul class="post-options">
-                        <li>Copy URL</li>
-                        <li>Block user</li>
-                        <li>Report</li>
-                        <li>Curate</li>
-                    </ul>
+                    <div class="post_virality flex-center" title="Virality"><img class="L-icon"
+                            src="/svgs/virality.svg" /> 23%</div>
                 </header>
 
                 <div class="content">
@@ -445,16 +442,16 @@
                         </video>
                     </div>
                     <div class="post-actions">
-                        <button class="like2give" title="Like2Give"><img class="M-icon" src="/svgs/like.svg" />
-                            23.000</button>
-                        <button class="share2earn" title="Share2Earn"><img class="M-icon" src="/svgs/share.svg" />
-                            12.000</button>
+                        <button class="like2give" title="Like2Give" data-amount="6000">6,000</button>
+                        <button class="share2earn" title="Share2Earn" data-amount="12000">12,000</button>
                         <button class="categorize" title="Categorize"><img class="S-icon"
                                 src="/svgs/category.svg" /></button>
                         <button class="copy_url" title="Copy URL"><img class="M-icon" src="/svgs/url.svg" /></button>
                         <button class="autorepin" title="AutoRepin"><img class="M-icon"
                                 src="/svgs/repin.svg" /></button>
-                        <button class="virality" title="Virality"><img class="S-icon" src="/svgs/signal.svg" /></button>
+                        <button class="curate" title="Curate"><img class="M-icon" src="/svgs/check.svg" /></button>
+                        <button class="report" title="Report"><img class="M-icon" src="/svgs/report.svg" /></button>
+                        <button class="edit" title="Edit"><img class="S-icon" src="/svgs/edit.svg" /></button>
                     </div>
                 </div>
             </article>
@@ -490,16 +487,26 @@
                 <p class="author">
                     <a class="small_avatar" href="/profile.html"><img src="/avatars/lucianape3.webp" /></a>
                     All suggestions are welcome.
+                    We should do this similar to Youtube style.
                 </p>
+                <!-- We should do this similar to Youtube style. -->
 
             </div>
         </div>
     </main>
-
+    <div id="search_container">
+        <form>
+            <input id="searchThis" type="text" value="" placeholder="Search ..." />
+            <input type="submit" value="" />
+        </form>
+        <div class="results">
+            <span>Games</span> <span>Funny</span> <span>DIY</span> <span>Health</span>
+        </div>
+    </div>
     <footer class="maxw-690">
         <div class="flex justify-around">
-            <button id="biip-btn" class="flex-center" title="BiiP Home"><img class="L-icon"
-                    src="/svgs/biip-logo.svg" /></button>
+            <button id="timeline" class="flex-center" title="Timeline"><img class="M-icon invert-1"
+                    src="/svgs/timeline.svg" /></button>
             <button id="post-btn" title="Post"><img src="/svgs/plus.svg" /></button>
             <button id="search-btn" title="Search"><img class="M-icon" src="/svgs/search.svg" /></button>
         </div>

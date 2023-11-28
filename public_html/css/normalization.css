@@ -40,6 +40,8 @@ body p {
 .post-options,
 .dots,
 #themeSwitch,
+#soundSwitch,
+#search_container,
 #posting,
 #posting input[type=checkbox],
 .type input,
@@ -76,4 +78,10 @@ button {
     min-height: 320px;
     max-width: 1111px;
     margin: 0 auto;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+    color: var(--second-contrast-99)
 }

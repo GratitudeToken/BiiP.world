@@ -6,6 +6,10 @@
     cursor: pointer;
 }
 
+.pv23 {
+    padding: 23px 0 !important
+}
+
 .S-icon,
 .M-icon {
     width: 16px;
@@ -180,6 +184,28 @@ body .blur-it {
     gap: 10px
 }
 
+.table1 {
+    width: 100%;
+    margin-bottom: 23px;
+}
+
+.table1 th,
+.table1 td {
+    background: var(--second-contrast-15);
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.table1 td {
+    font-size: 10px;
+    color: var(--second-contrast-99)
+}
+
+.table1 tr:nth-of-type(even) td {
+    background: var(--main-bg-color);
+    padding: 5px
+}
+
 .top-auto {
     top: auto !important
 }
@@ -197,10 +223,7 @@ body .blur-it {
     display: inline-block;
     width: 46px;
     height: 21px;
-    top: 0;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
+    margin: 0 5px
 }
 
 /* Hide default HTML checkbox */
@@ -240,7 +263,7 @@ body .blur-it {
 }
 
 .switch input:focus+.slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px #f32121;
 }
 
 .switch input:checked+.slider:before {

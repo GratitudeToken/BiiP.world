@@ -1,4 +1,5 @@
 import { $ } from '/js/selectors.js'
+import { defaultSounds } from '/js/sounds-preloading.js';
 
 export let theme = () => {
 
@@ -15,10 +16,7 @@ export let theme = () => {
 
     localTheme ? theme = localTheme : theme = navigatorTheme
 
-    let sound
-
-    const lightSound = new Audio('/sounds/lucianape3/light.mp3');
-    const darkSound = new Audio('/sounds/lucianape3/dark.mp3');
+    let sounds = defaultSounds('lucianape3', null, null)
 
     const addCSS = (url, theme) => {
         const head = document.getElementsByTagName('head')[0]
@@ -35,16 +33,18 @@ export let theme = () => {
 
     themeSwitch.addEventListener("change", (e) => {
 
+        sounds = defaultSounds('lucianape3', null, null)
+
         if (themeSwitch.checked) {
             localStorage.setItem('theme', 'dark')
             addCSS('/css/dark-theme.css', 'dark')
-            darkSound.currentTime = 0
-            darkSound.play()
+            sounds[13].currentTime = 0
+            sounds[13].play()
         } else {
             localStorage.setItem('theme', 'light')
             addCSS('/css/default-theme.css', 'light')
-            lightSound.currentTime = 0
-            lightSound.play()
+            sounds[14].currentTime = 0
+            sounds[14].play()
         }
     })
 
