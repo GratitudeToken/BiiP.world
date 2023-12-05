@@ -1,0 +1,84 @@
+{
+    "Free Stuff": [
+        "Barter and Swap",
+        "Free Items"
+    ],
+    "For Sale": [
+        "Appliances",
+        "Clothing and Accessories",
+        "Collectibles",
+        "Electronics",
+        "Furniture",
+        "Home and Garden",
+        "Musical Instruments",
+        "Sports and Outdoors",
+        "Tools and Machinery"
+    ],
+    "Vehicles": [
+        "Boats",
+        "Cars",
+        "Commercial Vehicles",
+        "Motorcycles",
+        "Parts and Accessories",
+        "RVs and Campers",
+        "Trucks"
+    ],
+    "Real Estate": [
+        "Commercial Property",
+        "For Rent",
+        "For Sale",
+        "Real Estate Services",
+        "Vacation Rentals"
+    ],
+    "Jobs": [
+        "Freelance",
+        "Full-time",
+        "Internships",
+        "Job Services",
+        "Part-time",
+        "Resumes"
+    ],
+    "Services": [
+        "Automotive Services",
+        "Beauty and Spa",
+        "Computer and Tech Help",
+        "Creative Services",
+        "Event Services",
+        "Financial Services",
+        "Health and Wellness",
+        "Home Services",
+        "Legal Services",
+        "Moving and Storage",
+        "Pet Services"
+    ],
+    "Community": [
+        "Classes and Workshops",
+        "Events",
+        "Groups and Clubs",
+        "Lost and Found",
+        "Volunteers"
+    ],
+    "Business and Industrial": [
+        "Agriculture and Forestry",
+        "Construction",
+        "Industrial Equipment",
+        "Restaurant and Food Service",
+        "Retail and Wholesale"
+    ],
+    "Hobbies and Leisure": [
+        "Books and Magazines",
+        "Music and Movies",
+        "Sports Equipment",
+        "Toys and Games"
+    ],
+    "Travel": [
+        "Hotels",
+        "Travel Services",
+        "Vacation Packages"
+    ],
+    "Health and Fitness": [
+        "Fitness Equipment",
+        "Health Services",
+        "Nutrition and Supplements"
+    ]
+}

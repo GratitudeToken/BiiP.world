@@ -22,7 +22,9 @@
 }
 
 #filters label {
-    margin: 2%;
+    width: 12vw;
+    height: 12vw;
+    margin: 0 auto;
     border-radius: 51%;
     cursor: pointer;
     background: var(--second-contrast-15);
@@ -50,7 +52,8 @@
 
 @media screen and (min-width: 950px) {
     #filters label {
-        margin: 23%;
+        width: 64px;
+        height: 64px;
     }
 
     #filters label img {

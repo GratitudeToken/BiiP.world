@@ -10,7 +10,7 @@
     --main-contrast: #000000;
     --main-contrast-69: #00000069;
     --main-contrast-99: #00000099;
-    --main-header-bg: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 23%);
+    --main-header-bg: rgba(0, 0, 0, .88);
     --second-contrast: #ffffff;
     --second-contrast-09: #ffffff09;
     --second-contrast-15: #ffffff15;

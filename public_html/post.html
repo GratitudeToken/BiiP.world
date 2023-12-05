@@ -300,7 +300,7 @@
             <div id="buttonz" class="flex justify-between">
                 <button id="cancel-posting" class="btn">CANCEL</button>
                 <div class="postMsg">All posts are public.</div>
-                <input id="post-now" class="btn" type="submit" value="SEND"></button>
+                <button id="post-now" class="btn" type="submit">SEND</button>
             </div>
         </form>
     </div>
@@ -452,6 +452,7 @@
                         <button class="curate" title="Curate"><img class="M-icon" src="/svgs/check.svg" /></button>
                         <button class="report" title="Report"><img class="M-icon" src="/svgs/report.svg" /></button>
                         <button class="edit" title="Edit"><img class="S-icon" src="/svgs/edit.svg" /></button>
+                        <button class="delete" title="Delete"><img class="S-icon" src="/svgs/trash.svg" /></button>
                     </div>
                 </div>
             </article>
@@ -489,14 +490,14 @@
                     All suggestions are welcome.
                     We should do this similar to Youtube style.
                 </p>
-                <!-- We should do this similar to Youtube style. -->
+                <!-- We should do this similar to Youtube style?? ALSO: If you double tap a comment you trigger the Like2Give feature for the author. -->
 
             </div>
         </div>
     </main>
     <div id="search_container">
         <form>
-            <input id="searchThis" type="text" value="" placeholder="Search ..." />
+            <input id="searchThis" type="text" value="" placeholder="Profile Search ..." />
             <input type="submit" value="" />
         </form>
         <div class="results">
@@ -513,6 +514,7 @@
         <!-- Hide the small buttons behind the Plus, slide them out when + is clicked, if + is clicked again, it triggers the Posting Modal. -->
     </footer>
 
+    <button id="scrollToTopBtn"></button>
 
     <script src="https://unpkg.com/@proton/web-sdk@4.2.15"></script>
     <script type="module" src="/js/proton.js"></script>

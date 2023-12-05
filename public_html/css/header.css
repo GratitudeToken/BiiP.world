@@ -8,14 +8,18 @@
     margin: 0 auto;
     padding-bottom: 23px;
     padding: 8px 0 5px 5px;
-    background: var(--main-contrast-99);
-    backdrop-filter: blur(9px);
+    background: var(--main-header-bg);
+    backdrop-filter: blur(5px);
     display: flex;
     align-content: center;
     align-items: center;
     flex-direction: column;
     z-index: 11;
     pointer-events: none;
+}
+
+.balances {
+    margin-top: 6px
 }
 
 #main_header * {
@@ -68,8 +72,8 @@
 .avatar-container,
 .post-thumbnail {
     display: flex;
-    width: 32px;
-    height: 32px;
+    width: 44px;
+    height: 44px;
     margin: -4px 0 0 5px;
     border-radius: 51%;
     overflow: hidden;
@@ -84,7 +88,7 @@
 
 .avatar,
 .p-thumb {
-    width: 32px;
+    width: 44px;
     display: block;
     border: 0;
     object-fit: cover;
@@ -95,7 +99,7 @@
 #menu-options {
     min-width: 160px;
     position: absolute;
-    top: 12px;
+    top: 52px;
     right: 3px;
     padding: 5px;
     border-radius: 5px;
@@ -106,7 +110,20 @@
     z-index: 2;
 }
 
-#user-menu:hover #menu-options {
+#menu-options:before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid var(--menu-button);
+    top: -10px;
+    right: 20px;
+    position: absolute;
+}
+
+.show #menu-options {
     display: block;
 }
 

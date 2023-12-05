@@ -299,7 +299,7 @@
             <div id="buttonz" class="flex justify-between">
                 <button id="cancel-posting" class="btn">CANCEL</button>
                 <div class="postMsg">All posts are public.</div>
-                <input id="post-now" class="btn" type="submit" value="SEND"></button>
+                <button id="post-now" class="btn" type="submit">SEND</button>
             </div>
         </form>
     </div>
@@ -452,19 +452,17 @@
 
         <div id="actions" class="flex-center">
             <div>
-                <button id="follow" title="Follow"></button>
+                <div id="follow" title="Follow">
+                </div>
                 <div class="blip"></div>
             </div>
             <!-- clicking following makes that beep sound and rotates the :after element back to original horizontal position so we get a minus, also make an effect like circle rippling from button. aand ... for unfollowing, reverse the effect, reverse the sound and the circle effect ripples from outside to center of button and the :after element rotates back to 90deg -->
             <!-- Also, maybe create general effect for text modals, zoom from outside to inside the text like in BiiP
             protocol maybe and rotate to center - copy paste? or something like youtube notification bottom-left? -->
-            <div>
-                <button id="send-msg" class="messages" title="Message">
-                    <img class="invert2" src="/svgs/chat.svg">
-                </button>
+            <div id="send-msg" class="messages" title="Message">
+                <img class="invert2" src="/svgs/chat.svg">
             </div>
-            <div><button id="block" title="Block"><img class="invert2" src="/svgs/block.svg"></button>
-            </div>
+            <div id="block" title="Block"><img class="invert2" src="/svgs/block.svg"></div>
         </div>
         <div>
             <div class="stats grid2x2 gap10">
@@ -482,27 +480,32 @@
                     Engagement<b>32%</b>
                 </div>
             </div>
-            <form id="filter-user-content" class="type flex-center">
-                <input id="videos" type="radio" name="filter" />
-                <label for="videos" title="Videos"><img class="S-icon invert1 inline-block" src="/svgs/video.svg" />
-                    10</label>
-                <input id="images" type="radio" name="filter" />
-                <label for="images" title="Images"><img class="S-icon invert1 inline-block" src="/svgs/image.svg" />
-                    57</label>
-                <input id="audio" type="radio" name="filter" />
-                <label for="audio" title="Audio"><img class="S-icon invert1 inline-block" src="/svgs/music.svg" />
-                    23</label>
-                <input id="text" type="radio" name="filter" />
-                <label for="text" title="Text"><img class="S-icon invert1 inline-block" src="/svgs/text.svg" />
-                    12</label>
-                <input id="selling" type="radio" name="filter" />
-                <label for="selling" title="Selling"><img class="S-icon invert1 inline-block" src="/svgs/cart.svg" />
-                    3</label>
+            <form id="filters">
+                <input id="mixed" type="radio" name="filters" />
+                <label for="mixed" title="Mixed"><img class="invert1 inline-block" src="/svgs/mixed.svg" /></label>
+                <input id="videos" type="radio" name="filters" />
+                <label for="videos" title="Videos"><img class="invert1 inline-block" src="/svgs/video.svg" /></label>
+                <input id="images" type="radio" name="filters" />
+                <label for="images" title="Images"><img class="invert1 inline-block" src="/svgs/image.svg" /></label>
+                <input id="audio" type="radio" name="filters" />
+                <label for="audio" title="Audio"><img class="invert1 inline-block" src="/svgs/music.svg" /></label>
+                <input id="text" type="radio" name="filters" />
+                <label for="text" title="Text"><img class="invert1 inline-block" src="/svgs/text.svg" /></label>
+                <input id="markets" type="radio" name="filters" />
+                <label for="markets" title="Selling"><img class="invert1 inline-block" src="/svgs/cart.svg" /></label>
+                <input id="pins" type="radio" name="filters" />
+                <label for="pins" title="Pins"><img class="invert1 inline-block" src="/svgs/pin.svg" /></label>
             </form>
         </div>
         <h2 class="content_type">MIXED CONTENT</h2>
+        <!-- GAMIFICATION BANANZA !!! -->
+        <!-- DON'T FORGET ABOUT ACHIEVEMENTS IN PROFILE PAGE, STATUSES AND LEVELING SYSTEM -->
+
+        <!-- HERE'S AN INTERESTING IDEA.
+        Put a 23H limit on all important actions with a visible cooldown indicator in the header or somewhere on profile... for both own account or interacting with another account (user).
+        Actions like: sharing, liking, auto-repin, posting, etc. - also if this is true, you can queue these actions for how many days you want, to be executed for X number of times or infinitely, you can also queue posts, remove queued posts, shift the post hour ahead to another hour, etc -->
         <div class="posts">
-            <article>
+            <article data-type="videos">
                 <header>
                     <div class="flex-center">
                         <a class="small_avatar" href="/profile.html"><img src="/avatars/lucianape3.webp" /></a>
@@ -524,7 +527,9 @@
                     </div>
                     <div class="post-actions">
                         <button class="like2give" title="Like2Give" data-amount="6000">6,000</button>
+                        <!-- YOU CANNOT LIKE YOUR OWN POSTS -->
                         <button class="share2earn" title="Share2Earn" data-amount="12000">12,000</button>
+                        <!-- IF YOU ARE THE AUTHOR OF A POST, WHETHER HERE OR ON THE MAIN TIMELINE, THE SHARE2EARN BUTTON IS ALSO USED FOR ADDING MORE TOKENS TO BOOST IT -->
                         <button class="categorize" title="Categorize"><img class="S-icon"
                                 src="/svgs/category.svg" /></button>
                         <button class="comments" title="Comments"><img class="M-icon"
@@ -532,14 +537,13 @@
                         <button class="copy_url" title="Copy URL"><img class="M-icon" src="/svgs/url.svg" /></button>
                         <button class="autorepin" title="AutoRepin"><img class="M-icon"
                                 src="/svgs/repin.svg" /></button>
-                        <button class="curate" title="Curate"><img class="M-icon" src="/svgs/check.svg" /></button>
-                        <button class="report" title="Report"><img class="M-icon" src="/svgs/report.svg" /></button>
                         <button class="edit" title="Edit"><img class="S-icon" src="/svgs/edit.svg" /></button>
+                        <button class="delete" title="Delete"><img class="S-icon" src="/svgs/trash.svg" /></button>
                     </div>
                 </div>
             </article>
 
-            <article>
+            <article data-type="videos">
                 <header>
                     <div class="flex-center">
                         <a class="small_avatar" href="/profile.html"><img src="/avatars/lucianape3.webp" /></a>
@@ -573,14 +577,13 @@
                         <button class="copy_url" title="Copy URL"><img class="M-icon" src="/svgs/url.svg" /></button>
                         <button class="autorepin" title="AutoRepin"><img class="M-icon"
                                 src="/svgs/repin.svg" /></button>
-                        <button class="curate" title="Curate"><img class="M-icon" src="/svgs/check.svg" /></button>
-                        <button class="report" title="Report"><img class="M-icon" src="/svgs/report.svg" /></button>
                         <button class="edit" title="Edit"><img class="S-icon" src="/svgs/edit.svg" /></button>
+                        <button class="delete" title="Delete"><img class="S-icon" src="/svgs/trash.svg" /></button>
                     </div>
                 </div>
             </article>
 
-            <article>
+            <article data-type="images">
                 <header>
                     <div class="flex-center">
                         <a class="small_avatar" href="/profile.html"><img src="/avatars/lucianape3.webp" /></a>
@@ -610,14 +613,13 @@
                         <button class="copy_url" title="Copy URL"><img class="M-icon" src="/svgs/url.svg" /></button>
                         <button class="autorepin" title="AutoRepin"><img class="M-icon"
                                 src="/svgs/repin.svg" /></button>
-                        <button class="curate" title="Curate"><img class="M-icon" src="/svgs/check.svg" /></button>
-                        <button class="report" title="Report"><img class="M-icon" src="/svgs/report.svg" /></button>
                         <button class="edit" title="Edit"><img class="S-icon" src="/svgs/edit.svg" /></button>
+                        <button class="delete" title="Delete"><img class="S-icon" src="/svgs/trash.svg" /></button>
                     </div>
                 </div>
             </article>
 
-            <article>
+            <article data-type="text">
                 <header>
                     <div class="flex-center">
                         <a class="small_avatar" href="/profile.html"><img src="/avatars/lucianape3.webp" /></a>
@@ -677,14 +679,124 @@
                         <button class="copy_url" title="Copy URL"><img class="M-icon" src="/svgs/url.svg" /></button>
                         <button class="autorepin" title="AutoRepin"><img class="M-icon"
                                 src="/svgs/repin.svg" /></button>
-                        <button class="curate" title="Curate"><img class="M-icon" src="/svgs/check.svg" /></button>
-                        <button class="report" title="Report"><img class="M-icon" src="/svgs/report.svg" /></button>
                         <button class="edit" title="Edit"><img class="S-icon" src="/svgs/edit.svg" /></button>
+                        <button class="delete" title="Delete"><img class="S-icon" src="/svgs/trash.svg" /></button>
                     </div>
                 </div>
             </article>
 
-            <article>
+            <article data-type="images">
+                <header>
+                    <div class="flex-center">
+                        <a class="small_avatar" href="/profile.html"><img src="/avatars/lucianape3.webp" /></a>
+                        <div class="name_bio">
+                            <h3><a href="/profile.html">Lucian Apetrei @lucian</a></h3>
+                            <span class="bio">Creator of BiiP.world | Just now</span>
+                        </div>
+                    </div>
+                    <div class="post_virality flex-center" title="Virality"><img class="L-icon"
+                            src="/svgs/virality.svg" /> 23%
+                    </div>
+                </header>
+
+                <div class="content">
+                    <div class="main-data-container">
+                        <p>Influencers and creative people will love this platform.
+                        </p>
+                        <img class="image" src="/content/lucianape3/image/youtube.jpg" />
+                    </div>
+                    <div class="post-actions">
+                        <button class="like2give" title="Like2Give" data-amount="6000">6,000</button>
+                        <button class="share2earn" title="Share2Earn" data-amount="12000">12,000</button>
+                        <button class="categorize" title="Categorize"><img class="S-icon"
+                                src="/svgs/category.svg" /></button>
+                        <button class="comments" title="Comments"><img class="M-icon"
+                                src="/svgs/comment.svg" /></button>
+                        <button class="copy_url" title="Copy URL"><img class="M-icon" src="/svgs/url.svg" /></button>
+                        <button class="autorepin" title="AutoRepin"><img class="M-icon"
+                                src="/svgs/repin.svg" /></button>
+                        <button class="edit" title="Edit"><img class="S-icon" src="/svgs/edit.svg" /></button>
+                        <button class="delete" title="Delete"><img class="S-icon" src="/svgs/trash.svg" /></button>
+                    </div>
+                </div>
+            </article>
+
+            <article data-type="videos">
+                <header>
+                    <div class="flex-center">
+                        <a class="small_avatar" href="/profile.html"><img src="/avatars/lucianape3.webp" /></a>
+                        <div class="name_bio">
+                            <h3><a href="/profile.html">Lucian Apetrei @lucian</a></h3>
+                            <span class="bio">Creator of BiiP.world | Just now</span>
+                        </div>
+                    </div>
+                    <div class="post_virality flex-center" title="Virality"><img class="L-icon"
+                            src="/svgs/virality.svg" /> 23%
+                    </div>
+                </header>
+                <p>Our money shoud be represented by Gratitude not Greed. <a href="#">#gratitudetoken</a> <a
+                        href="#">#grat</a>
+                </p>
+                <div class="content">
+                    <div class="main-data-container">
+                        <video controls>
+                            <source src="/content/lucianape3/video/gratitude.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="post-actions">
+                        <button class="like2give" title="Like2Give" data-amount="6000">6,000</button>
+                        <button class="share2earn" title="Share2Earn" data-amount="12000">12,000</button>
+                        <button class="categorize" title="Categorize"><img class="S-icon"
+                                src="/svgs/category.svg" /></button>
+                        <button class="comments" title="Comments"><img class="M-icon"
+                                src="/svgs/comment.svg" /></button>
+                        <button class="copy_url" title="Copy URL"><img class="M-icon" src="/svgs/url.svg" /></button>
+                        <button class="autorepin" title="AutoRepin"><img class="M-icon"
+                                src="/svgs/repin.svg" /></button>
+                        <button class="edit" title="Edit"><img class="S-icon" src="/svgs/edit.svg" /></button>
+                        <button class="delete" title="Delete"><img class="S-icon" src="/svgs/trash.svg" /></button>
+                    </div>
+                </div>
+            </article>
+
+            <article data-type="images">
+                <header>
+                    <div class="flex-center">
+                        <a class="small_avatar" href="/profile.html"><img src="/avatars/lucianape3.webp" /></a>
+                        <div class="name_bio">
+                            <h3><a href="/profile.html">Lucian Apetrei @lucian</a></h3>
+                            <span class="bio">Creator of BiiP.world | Just now</span>
+                        </div>
+                    </div>
+                    <div class="post_virality flex-center" title="Virality"><img class="L-icon"
+                            src="/svgs/virality.svg" /> 23%
+                    </div>
+                </header>
+
+                <div class="content">
+                    <div class="main-data-container">
+                        <p>We are the end of "Social" Media and the beginning of Web 3.
+                        </p>
+                        <img class="image" src="/content/lucianape3/image/end.jpg" />
+                    </div>
+                    <div class="post-actions">
+                        <button class="like2give" title="Like2Give" data-amount="6000">6,000</button>
+                        <button class="share2earn" title="Share2Earn" data-amount="12000">12,000</button>
+                        <button class="categorize" title="Categorize"><img class="S-icon"
+                                src="/svgs/category.svg" /></button>
+                        <button class="comments" title="Comments"><img class="M-icon"
+                                src="/svgs/comment.svg" /></button>
+                        <button class="copy_url" title="Copy URL"><img class="M-icon" src="/svgs/url.svg" /></button>
+                        <button class="autorepin" title="AutoRepin"><img class="M-icon"
+                                src="/svgs/repin.svg" /></button>
+                        <button class="edit" title="Edit"><img class="S-icon" src="/svgs/edit.svg" /></button>
+                        <button class="delete" title="Delete"><img class="S-icon" src="/svgs/trash.svg" /></button>
+                    </div>
+                </div>
+            </article>
+
+            <article data-type="text">
                 <header>
                     <div class="flex-center">
                         <a class="small_avatar" href="/profile.html"><img src="/avatars/lucianape3.webp" /></a>
@@ -737,7 +849,7 @@
                             We will do our best to find the sweetspot of how much time a user should spend in our dApp,
                             ideally users who spend more time using it should gain more from it.
                         </p>
-                        <!-- For text, we should do a system that divides all text into pages automatically (user can choose from 3 sized pages) and you can swipe between the pages if there is text for more than 1 page. -->
+                        <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! For text, we should do a system that divides all text into pages automatically (for height: 2 * VW) and you can swipe between the pages if there is text for more than 1 page. -->
                     </div>
                     <div class="post-actions">
                         <button class="like2give" title="Like2Give" data-amount="6000">6,000</button>
@@ -749,14 +861,13 @@
                         <button class="copy_url" title="Copy URL"><img class="M-icon" src="/svgs/url.svg" /></button>
                         <button class="autorepin" title="AutoRepin"><img class="M-icon"
                                 src="/svgs/repin.svg" /></button>
-                        <button class="curate" title="Curate"><img class="M-icon" src="/svgs/check.svg" /></button>
-                        <button class="report" title="Report"><img class="M-icon" src="/svgs/report.svg" /></button>
                         <button class="edit" title="Edit"><img class="S-icon" src="/svgs/edit.svg" /></button>
+                        <button class="delete" title="Delete"><img class="S-icon" src="/svgs/trash.svg" /></button>
                     </div>
                 </div>
             </article>
 
-            <article>
+            <article data-type="images">
                 <header>
                     <div class="flex-center">
                         <a class="small_avatar" href="/profile.html"><img src="/avatars/lucianape3.webp" /></a>
@@ -797,14 +908,13 @@
                         <button class="copy_url" title="Copy URL"><img class="M-icon" src="/svgs/url.svg" /></button>
                         <button class="autorepin" title="AutoRepin"><img class="M-icon"
                                 src="/svgs/repin.svg" /></button>
-                        <button class="curate" title="Curate"><img class="M-icon" src="/svgs/check.svg" /></button>
-                        <button class="report" title="Report"><img class="M-icon" src="/svgs/report.svg" /></button>
                         <button class="edit" title="Edit"><img class="S-icon" src="/svgs/edit.svg" /></button>
+                        <button class="delete" title="Delete"><img class="S-icon" src="/svgs/trash.svg" /></button>
                     </div>
                 </div>
             </article>
 
-            <article>
+            <article data-type="text">
                 <header>
                     <div class="flex-center">
                         <a class="small_avatar" href="/profile.html"><img src="/avatars/lucianape3.webp" /></a>
@@ -856,16 +966,15 @@
                         <button class="copy_url" title="Copy URL"><img class="M-icon" src="/svgs/url.svg" /></button>
                         <button class="autorepin" title="AutoRepin"><img class="M-icon"
                                 src="/svgs/repin.svg" /></button>
-                        <button class="curate" title="Curate"><img class="M-icon" src="/svgs/check.svg" /></button>
-                        <button class="report" title="Report"><img class="M-icon" src="/svgs/report.svg" /></button>
                         <button class="edit" title="Edit"><img class="S-icon" src="/svgs/edit.svg" /></button>
+                        <button class="delete" title="Delete"><img class="S-icon" src="/svgs/trash.svg" /></button>
                     </div>
                 </div>
             </article>
     </main>
     <div id="search_container">
         <form>
-            <input id="searchThis" type="text" value="" placeholder="Search ..." />
+            <input id="searchThis" type="text" value="" placeholder="Profile Search ..." />
             <input type="submit" value="" />
         </form>
         <div class="results">
@@ -882,6 +991,7 @@
         <!-- Hide the small buttons behind the Plus, slide them out when + is clicked, if + is clicked again, it triggers the Posting Modal. -->
     </footer>
 
+    <button id="scrollToTopBtn"></button>
 
     <script src="https://unpkg.com/@proton/web-sdk@4.2.15"></script>
     <script type="module" src="/js/proton.js"></script>

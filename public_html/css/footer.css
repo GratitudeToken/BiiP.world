@@ -13,12 +13,13 @@ footer.maxw-690 {
 }
 
 footer button {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border: 0;
     border-radius: 40px;
     background: 0;
     background: #db463e;
+    box-shadow: 0 0 23px rgba(0, 0, 0, .5);
 }
 
 #post-btn {

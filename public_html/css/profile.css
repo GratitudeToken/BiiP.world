@@ -1,5 +1,5 @@
 #cover {
-    min-height: 230px;
+    height: 50vw;
     position: relative;
 }
 
@@ -9,10 +9,10 @@
 
 .profile_pic {
     border-radius: 51%;
-    width: 128px;
-    height: 128px;
+    width: 30vw;
+    height: 30vw;
     position: absolute;
-    bottom: -74px;
+    bottom: -15vw;
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -132,7 +132,7 @@
 }
 
 .distribution-stats {
-    margin-bottom: 64px;
+    margin-bottom: 15vw;
 }
 
 .distribution-stats span {
@@ -160,24 +160,6 @@
     background-color: #3e8fdb32;
 }
 
-
-.stats {
-    padding: 10px
-}
-
-.stats div {
-    border-radius: 10px;
-    padding: 23px 0;
-    background-color: var(--second-contrast-15);
-}
-
-.stats b {
-    display: block;
-    font-size: 23px;
-    padding: 10px 0 0 0;
-    font-family: 'Dosis', Arial, sans-serif;
-}
-
 #actions {
     padding: 12px 0;
 }
@@ -185,15 +167,7 @@
 #actions div {
     width: 64px;
     height: 64px;
-    display: inline-block;
-}
-
-#actions button {
-    width: 64px;
-    height: 64px;
-    background: var(--second-contrast-15);
     border-radius: 64px;
-    border: 0;
     font-size: 64px;
     font-family: Arial, sans-serif;
     display: flex;
@@ -201,6 +175,15 @@
     align-items: center;
     align-content: center;
     position: relative;
+    cursor: pointer;
+}
+
+#actions>div {
+    background: var(--second-contrast-15);
+}
+
+#actions>div:hover {
+    background: var(--second-contrast-23);
 }
 
 #actions img {
@@ -208,16 +191,13 @@
     height: 32px;
 }
 
-#actions div:nth-of-type(2) {
-    margin: 0 23px;
+#actions .blip {
+    position: absolute !important;
+    background: none
 }
 
-#actions div {
-    position: relative;
-}
-
-#actions button {
-    z-index: 2;
+#send-msg {
+    margin: 0 10px
 }
 
 .blocked img {
@@ -262,19 +242,23 @@
     animation: bliped-reverse 2s forwards;
 }
 
-#filter-user-content {
-    padding: 23px 10px;
-    display: grid;
-    grid-template-rows: repeat(1, 1fr);
-    grid-template-columns: repeat(5, 1fr);
-}
-
 
 @media screen and (min-width: 950px) {
     #cover {
+        height: 335px;
         margin-top: 10px;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px
+    }
+
+    .profile_pic {
+        width: 201px;
+        height: 201px;
+        bottom: -100px;
+    }
+
+    .distribution-stats {
+        margin-bottom: 100px;
     }
 
     .distribution-stats .l2g {

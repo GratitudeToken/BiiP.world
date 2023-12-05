@@ -3,17 +3,29 @@
     width: calc(100% - 20px);
     max-width: 650px;
     min-height: 230px;
+    transform: scale(0);
     margin: 0 auto;
     padding: 10px;
-    bottom: 120px;
+    bottom: -230px;
     left: 0;
     right: 0;
     z-index: 12;
-    background: rgba(255, 255, 255, .69);
+    background: rgba(255, 255, 255, .88);
     backdrop-filter: blur(10px);
     color: black;
     box-shadow: 0 5px 10px #00000069;
     border-radius: 10px;
+    transition: all 0.5s cubic-bezier(0, 0.66, 0.74, 1.04)
+}
+
+#posting.block {
+    bottom: 120px;
+    transform: scale(1);
+}
+
+#posting.sendPostAnimation {
+    bottom: 100%;
+    transform: scale(0);
 }
 
 #posting-form .type {
@@ -56,9 +68,10 @@
     margin-top: 10px
 }
 
-#buttonz button,
-#buttonz input {
+#buttonz button {
     background: #00000015;
+    border-radius: 32px;
+    color: black
 }
 
 #cancel-posting:hover {

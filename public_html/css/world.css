@@ -43,39 +43,6 @@ h1 {
     font-size: 11px;
 }
 
-.binaryCheckbox {
-    display: inline-block;
-    margin: 0 0 5px 0;
-    position: relative;
-    padding: 5px
-}
-
-.binaryCheckbox label {
-    content: '';
-    display: inline-block;
-    padding: 8px 16px;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.23s;
-}
-
-.binaryCheckbox span {
-    padding: 8px 16px;
-    border-radius: 50px;
-    margin: 0 10px;
-    display: inline-block;
-}
-
-.binaryCheckbox span:first-of-type,
-.binaryCheckbox span:hover,
-.binaryCheckbox input:checked+label span:last-of-type {
-    background: var(--second-contrast-15);
-}
-
-.binaryCheckbox input:checked+label span:first-of-type {
-    background: none
-}
-
 #followship {
     margin-bottom: 90px;
 }
@@ -101,10 +68,10 @@ h1 {
     width: 128px;
     height: 128px;
     position: absolute;
-    top: calc(50% - 64px);
+    top: calc(50vh - 64px);
     left: 0;
     right: 0;
-    margin: 0 auto
+    margin: 0 auto;
 }
 
 .byType {

@@ -1,10 +1,10 @@
 .circle-glow {
     position: absolute;
-    width: 64px;
-    height: 64px;
+    width: 30vw;
+    height: 30vw;
     left: 0;
     right: 0;
-    bottom: -41px;
+    bottom: -15vw;
     margin: 0 auto;
     transition: transform 0.5s ease;
     pointer-events: none;
@@ -16,8 +16,8 @@
 
 .circle-glow img {
     position: absolute;
-    width: 232px;
-    height: 232px;
+    width: 55vw;
+    height: 55vw;
     mix-blend-mode: plus-lighter;
 }
 
@@ -26,12 +26,31 @@
     animation: rotatecircle 40s linear infinite;
     animation-direction: reverse;
     animation-delay: 1s;
-    width: 255px;
-    height: 255px;
+    width: 60vw;
+    height: 60vw;
 }
 
 .circle-glow .img1 {
     animation: rotatecircle 5s ease infinite;
+}
+
+
+@media screen and (min-width: 950px) {
+    .circle-glow {
+        width: 201px;
+        height: 201px;
+        bottom: -100px;
+    }
+
+    .circle-glow img {
+        width: 332px;
+        height: 332px;
+    }
+
+    .circle-glow .img0 {
+        width: 388px;
+        height: 388px;
+    }
 }
 
 
@@ -299,5 +318,24 @@
 
     100% {
         bottom: -230px
+    }
+}
+
+.glowy {
+    animation: glowy 2.3s infinite cubic-bezier(0, 0.74, 1, 1);
+}
+
+
+@keyframes glowy {
+    0% {
+        box-shadow: 0 0 0 var(--main-color);
+    }
+
+    50% {
+        box-shadow: 0 0 120px var(--main-color);
+    }
+
+    100% {
+        box-shadow: 0 0 0 var(--main-color);
     }
 }

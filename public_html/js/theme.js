@@ -38,13 +38,13 @@ export let theme = () => {
         if (themeSwitch.checked) {
             localStorage.setItem('theme', 'dark')
             addCSS('/css/dark-theme.css', 'dark')
-            sounds[13].currentTime = 0
-            sounds[13].play()
+            sounds[14].currentTime = 0
+            sounds[14].play()
         } else {
             localStorage.setItem('theme', 'light')
             addCSS('/css/default-theme.css', 'light')
-            sounds[14].currentTime = 0
-            sounds[14].play()
+            sounds[15].currentTime = 0
+            sounds[15].play()
         }
     })
 

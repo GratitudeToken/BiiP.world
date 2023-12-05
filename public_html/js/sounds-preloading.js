@@ -1,4 +1,4 @@
-const defaultFiles = ['click.mp3', 'send.mp3', 'message.mp3', 'message-reverse.mp3', 'inspect.mp3', 'bell.mp3', 'like.mp3', 'drawer.mp3', 'drawer-reverse.mp3', 'swing.mp3', 'sword-swing.mp3', 'whoosh.mp3', 'bamboo-swing.mp3', 'dark.mp3', 'light.mp3']
+const defaultFiles = ['click', 'powerup', 'powerup-reverse', 'message', 'message-reverse', 'inspect', 'bell', 'like', 'drawer', 'drawer-reverse', 'swing', 'sword-swing', 'whoosh', 'bamboo-swing', 'dark', 'light', 'post', 'send', 'search', 'filter', 'okay']
 
 export const defaultSounds = ((username, files, dir) => {
     // username - that owns the sounds
@@ -16,7 +16,7 @@ export const defaultSounds = ((username, files, dir) => {
         dir ? haveDir = dir + '/' : haveDir = '';
 
         filesArray.forEach(el => {
-            sounds.push(new Audio(`/sounds/${username}/${haveDir}${el}`));
+            sounds.push(new Audio(`/sounds/${username}/${haveDir}${el}.mp3`));
         })
 
         return sounds

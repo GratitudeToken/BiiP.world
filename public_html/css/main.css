@@ -176,8 +176,8 @@ audio {
 }
 
 .post-actions button {
-  height: 32px;
-  line-height: 32px;
+  height: 44px;
+  line-height: 44px;
   background: var(--second-contrast-15);
   background-blend-mode: color;
   font-family: 'Dosis', Arial, sans-serif;
@@ -222,7 +222,8 @@ audio {
 }
 
 .edit img,
-.autorepin img {
+.autorepin img,
+.boost img {
   filter: var(--invert2) !important
 }
 
@@ -287,14 +288,21 @@ audio {
   top: calc(50% - 32px);
   left: 0;
   z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0);
+  transition: transform 0.5s
 }
 
 body.showSearch #search_container {
-  display: block !important
+  opacity: 1;
+  pointer-events: all !important;
+  transform: scale(1)
 }
 
 #search_container form {
   width: 80%;
+  height: 68px;
   max-width: 444px;
   position: relative;
   margin: 0 auto
@@ -303,6 +311,7 @@ body.showSearch #search_container {
 #search_container input {
   display: inline-block;
   width: 100%;
+  height: 68px;
   border-radius: 68px;
   font-size: 23px;
   font-weight: bold;
@@ -429,8 +438,8 @@ body.showSearch #search_container {
   width: 80%;
   max-width: 260px;
   height: calc(100vh - 94px);
-  background: var(--main-contrast-99);
-  backdrop-filter: blur(9px);
+  background: var(--main-header-bg);
+  backdrop-filter: blur(5px);
   padding: 10px;
   position: fixed;
   top: 40px;
@@ -642,7 +651,53 @@ body.showSearch #search_container {
   top: 10px
 }
 
+#scrollToTopBtn {
+  opacity: 0;
+}
+
+
+.stats {
+  padding: 10px
+}
+
+.stats div {
+  border-radius: 10px;
+  padding: 23px 0;
+  background-color: var(--second-contrast-15);
+}
+
+.stats b {
+  display: block;
+  font-size: 23px;
+  padding: 10px 0 0 0;
+  font-family: 'Dosis', Arial, sans-serif;
+}
+
+
+
 @media screen and (min-width: 950px) {
+
+  #scrollToTopBtn {
+    display: block;
+    pointer-events: none;
+    position: fixed;
+    bottom: 100%;
+    right: 10px;
+    width: 64px;
+    height: 64px;
+    border-radius: 64px;
+    border: 0px;
+    background: #ffffff url(/svgs/top.svg) no-repeat 50% 50%;
+    background-size: 32px 32px;
+    transition: 0.23s bottom
+  }
+
+  .showTopBtn {
+    opacity: 1 !important;
+    pointer-events: all !important;
+    display: block !important;
+    bottom: 10px !important
+  }
 
   article {
     padding: 23px 0;
@@ -652,6 +707,10 @@ body.showSearch #search_container {
   .post-actions {
     padding: 10px 0 0 0;
     width: auto;
+  }
+
+  .post-actions button {
+    margin: 10px 1px 0 1px;
   }
 
   video {

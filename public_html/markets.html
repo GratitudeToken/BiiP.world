@@ -50,7 +50,7 @@
 
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/world.css">
-    <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="/css/markets.css">
     <link rel="canonical" href="https://biip.world" />
 </head>
 
@@ -301,7 +301,7 @@
             <div id="buttonz" class="flex justify-between">
                 <button id="cancel-posting" class="btn">CANCEL</button>
                 <div class="postMsg">All posts are public.</div>
-                <input id="post-now" class="btn" type="submit" value="SEND"></button>
+                <button id="post-now" class="btn" type="submit">SEND</button>
             </div>
         </form>
     </div>
@@ -321,12 +321,15 @@
                             src="/avatars/dyablohunter.webp" />
                     </div>
                     <div id="menu-options">
-                        <!-- Hide login button when authenticated. -->
+                        <button id="index" class="index" title="Home"><img class="M-icon invert-1" alt="Timeline"
+                                src="/svgs/biip-logo.svg" />
+                            <span>Home</span></button>
                         <button id="profile" class="profile" title="Manage Profile"><img class="M-icon"
                                 alt="Manage Profile" src="/svgs/user.svg" /> <span>Profile</span></button>
                         <button id="messages" class="messages" title="Messages"><img class="M-icon invert-1"
                                 src="/svgs/chat.svg">
                             <span>Messages</span></button>
+                        <!-- Hide login button when authenticated. -->
                         <button id="login" class="login" title="Connect Account"><img class="M-icon"
                                 alt="Connect wallet - Unlocked" src="/svgs/qr.svg" /> <span>Connect
                                 wallet</span></button>
@@ -399,51 +402,63 @@
 
     <main class="maxw-690">
         <h1>Markets</h1>
-        <b class="systems_status"><i></i>All systems operational</b>
-        <p id="living" title="Where you at?"><img class="M-icon invert2" src="/svgs/globe.svg" /> Bucharest</p>
+        <p id="market_location" title="Where to?"><img class="M-icon invert2" src="/svgs/globe.svg" /> Global</p>
+        <!-- Asta tre sa fie un search cu sugestii, foloseste acelasi stil ca la search-ul principal. -->
 
         <div>
             <div class="stats grid2x2 gap10">
-                <div title="How many users are registered with BiiP.world">Markets<b>1,000,000</b></div>
-                <div title="How many users are active right now">Posts<b>230,000</b></div>
-                <div title="How many user created NFTs were created for BiiP.world">NFTs<b>23,000,000</b></div>
-                <div title="How many posts have users published.">Posts<b>1,000,500</b></div>
+                <div title="How many users are registered with BiiP.world">Markets<b>230</b></div>
+                <div title="How many users are active right now">Regular listings<b>230,000</b></div>
+                <div title="How many user created NFTs were created for BiiP.world">NFTs<b>23,000</b></div>
+                <div title="How many posts have users published.">Total value<b>23M GRAT</b></div>
             </div>
-            <div class="type flex-center">
-                <b title="Videos"><b><img class="S-icon invert1 inline-block" src="/svgs/video.svg" />
-                        100,000,000</b></b>
-                <b title="Images"><b><img class="S-icon invert1 inline-block" src="/svgs/image.svg" />
-                        100,000,000</b></b>
-                <b title="Audio"><b><img class="S-icon invert1 inline-block" src="/svgs/music.svg" />
-                        100,000,000</b></b>
-                <b title="Text"><b><img class="S-icon invert1 inline-block" src="/svgs/text.svg" />
-                        100,000,000</b></b>
-                <b title="Selling"><b><img class="S-icon invert1 inline-block" src="/svgs/cart.svg" />
-                        100,000,000</b></b>
+        </div><br><br>
+        <h3>Work in Progress ...</h3><br><br>
+        <form class="binaryCheckbox">
+            <input id="marketTypeSwitch" class="hide" type="checkbox" />
+            <label for="marketTypeSwitch">
+                <span>NFTs</span>
+                <span>Regular</span>
+            </label>
+            <div class="squareSelection">
+                <div id="nft">
+                    <img title="Pages" data-type="page" class="selected" src="/img/markets/pages.jpg" />
+                    <img title="Avatars" data-type="avatar" src="/img/markets/avatars.jpg" />
+                    <img title="Covers" data-type="cover" src="/img/markets/covers.jpg" />
+                    <img title="Animations" data-type="animation" src="/img/markets/play64.gif" />
+                    <img title="Sounds" data-type="sound" src="/img/markets/sound.jpg" />
+                    <img title="Scripts" data-type="script" src="/img/markets/scripts.jpg" />
+                </div>
+                <div id="regular">
+                    <img class="selected" title="Free Stuff" data-type="free" src="/img/markets/free.jpg" />
+                    <img title="For Sale" data-type="for-sale" src="/img/markets/for-sale.jpg" />
+                    <img title="Vehicles" data-type="vehicles" src="/img/markets/vehicles.jpg" />
+                    <img title="Real Estate" data-type="real-estate" src="/img/markets/real-estate.jpg" />
+                    <img title="Jobs" data-type="jobs" src="/img/markets/jobs.jpg" />
+                    <img title="Services" data-type="services" src="/img/markets/services.jpg" />
+                    <img title="Community" data-type="community" src="/img/markets/community.jpg" />
+                    <img title="Business and Industrial" data-type="industrial" src="/img/markets/industrial.jpg" />
+                    <img title="Hobbies and Leisure" data-type="hobbies" src="/img/markets/hobbies.jpg" />
+                    <img title="Travel" data-type="travel" src="/img/markets/travel.jpg" />
+                    <img title="Health and Fitness" data-type="health" src="/img/markets/health.jpg" />
+                </div>
             </div>
-        </div>
-        <h2 class="content_type">NFTs MARKET</h2>
-        <div>Buy and Sell NFT's that bring you new Styles, Effects, Sounds to apply to your UX.<br>
-        </div>
-        <h2 class="content_type">EXPOSURE MARKET</h2>
-        <div>Default settings for Share2Earn algoritm:<br>
+        </form>
+        <h2 class="market_type">Pages</h2>
+        <p id="marketDescription">Create, Sell or Buy unique Pages as NFT's.</p>
+        <div id="subcategories"></div>
+        <!-- <h2 class="market_type">Animations</h2>
+        <p id="marketDescription">Buy and Sell unique NFT's that you can apply as static/animated Avatars,
+            static/animated Covers, CSS
+            Styles, CSS & JS Animations, Sounds and useful Scripts to your User Interface.
+        </p> -->
+
+        <div style="display: none;">Default settings for Share2Earn algoritm:<br>
             50% of tokens earned through sharing goes into like2give balance and 50% you can take home.<br>
             50% of likes you get you can take home, 50% go straight to your Like2Give Balance.<br>
             50% goes to user that shares and brings exposure and the other 50% goes to his Like2Give balance.<br>
-            The basic starting amount of tokens spent per user share action is decided freely by the market average.<br>
-            However, authors may tilt the balance in either direction up to 100%.<br><br>
-            If for example the author decides to give 80% of the tokens to the user that shared, this is seen as
-            selfish, because that leaves only 20% for the Like2Give balance where he can distribute the tokens through
-            liking other
-            people's posts. In this
-            case, the amount of tokens per share any user earns also decreases by the additional 30% (the multiplication
-            factor here is per follower and other criteria).<br><br>
-            If the balance is tilted the other way, 80% for the Like2Give balance, this is seen as altruistic and
-            helping distribute wealth uniformly, so the basic amount per share also
-            increases by 30% compared to average market price.<br><br>
+            The basic starting amount of tokens spent per user share action is decided by the market average.<br>
 
-            Or maybeeeee ..... we should leave it at 50/50 forever and not only for Share2Earn, but also for
-            Like2Give.<br>
             So whenever you receive 100 tokens from 50 users let's say, half of those tokens you can sell for Fiat, but
             half of them remain in the network and it keeps fragmenting down into itself, and if we tilt the balance
             even slightly to 51% like to give balance, that means that 51% of all tokens remain inside the network, and
@@ -459,7 +474,7 @@
     </main>
     <div id="search_container">
         <form>
-            <input id="searchThis" type="text" value="" placeholder="Search ..." />
+            <input id="searchThis" type="text" value="" placeholder="Market Search ..." />
             <input type="submit" value="" />
         </form>
         <div class="results">
@@ -468,7 +483,7 @@
     </div>
     <footer class="maxw-690">
         <div class="flex justify-around">
-            <button id="timeline" class="flex-center" title="Timeline"><img class="L-icon"
+            <button id="timeline" class="flex-center" title="Timeline"><img class="M-icon invert-1"
                     src="/svgs/timeline.svg" /></button>
             <button id="post-btn" title="Post"><img src="/svgs/plus.svg" /></button>
             <button id="search-btn" title="Search"><img class="M-icon" src="/svgs/search.svg" /></button>
@@ -476,11 +491,12 @@
         <!-- Hide the small buttons behind the Plus, slide them out when + is clicked, if + is clicked again, it triggers the Posting Modal. -->
     </footer>
 
+    <button id="scrollToTopBtn"></button>
 
     <script src="https://unpkg.com/@proton/web-sdk@4.2.15"></script>
     <script type="module" src="/js/proton.js"></script>
     <script type="module" src="/js/main.js"></script>
-    <script type="module" src="/js/profile.js"></script>
+    <script type="module" src="/js/markets.js"></script>
 </body>
 
 </html>

@@ -25,7 +25,7 @@ export const pop_it = (el, toggle, title, src, color, msg, sound, username, blur
     el.addEventListener('click', e => {
         // update the button
         if (sound[0] === 'like' || sound[0] === 'share') {
-            el.textContent = result
+            el.textContent = result.toFixed(2)
         }
 
         let audio = []

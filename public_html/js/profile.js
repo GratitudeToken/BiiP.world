@@ -1,6 +1,8 @@
 import { $ } from '/js/selectors.js';
 import { pop_it } from '/js/shortMessage.js';
 import { defaultSounds } from '/js/sounds-preloading.js';
+import { filters } from '/js/filters.js';
+filters()
 
 $('#soundSwitch').addEventListener('change', e => {
     if ($('#soundSwitch').checked === true) {
@@ -19,7 +21,7 @@ const username = $('.username')
 
 $('.profile_pic') ? $('.profile_pic').addEventListener('mousedown', e => {
     const sounds = defaultSounds('lucianape3', null, null)
-    sounds ? sounds[6].play() : null
+    sounds ? sounds[7].play() : null
 }) : null;
 
 if (follow) {
