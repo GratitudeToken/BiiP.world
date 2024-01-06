@@ -33,6 +33,10 @@ body p {
     line-height: 1.4;
 }
 
+img {
+    display: block;
+}
+
 
 #navigation,
 #loader,
@@ -48,10 +52,32 @@ body p {
 #messages-container .me .small_avatar,
 .posts article,
 .post-actions::-webkit-scrollbar,
+#shared_board::-webkit-scrollbar,
 .squareSelection div,
 #dm .discussion::-webkit-scrollbar,
-#previous_posts::-webkit-scrollbar {
+#previous_posts::-webkit-scrollbar,
+.squareSelection::-webkit-scrollbar,
+#subcategories::-webkit-scrollbar,
+#grid_filter input,
+actions button,
+#inventory slots {
     display: none
+}
+
+.hidden {
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.post-actions,
+#shared_board,
+#dm .discussion,
+.squareSelection,
+#subcategories {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 

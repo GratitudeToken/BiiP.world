@@ -6,6 +6,7 @@ footer {
     left: 0;
     right: 0;
     margin: 0 auto;
+    pointer-events: none;
 }
 
 footer.maxw-690 {
@@ -13,6 +14,11 @@ footer.maxw-690 {
 }
 
 footer button {
+    display: flex;
+    pointer-events: all;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
     width: 50px;
     height: 50px;
     border: 0;

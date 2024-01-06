@@ -8,12 +8,9 @@
     padding: 70px 10px 100px 10px;
     text-align: left;
     overflow-y: scroll;
+    overflow-x: hidden;
     z-index: 3;
     transition: left 0.23s;
-    -ms-overflow-style: none;
-    /* IE and Edge */
-    scrollbar-width: none;
-    /* Firefox */
 }
 
 .posts_nav {
@@ -70,6 +67,9 @@
     width: 100%;
 }
 
+.discussion {
+    padding-bottom: 100px;
+}
 
 .discussion h3 {
     margin: 23px 0;

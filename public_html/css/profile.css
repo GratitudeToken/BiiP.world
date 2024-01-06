@@ -1,6 +1,37 @@
 #cover {
     height: 50vw;
     position: relative;
+    animation: bg-up-down 60s infinite linear
+}
+
+xp {
+    max-width: 690px;
+    margin: 0 auto;
+    font-size: 10px;
+    background: var(--second-contrast-15);
+    color: var(--second-contrast-99);
+    text-align: center;
+    display: block;
+    margin: 5px 0 0 0;
+    padding: 3px;
+    font-family: 'Dosis', Arial, sans-serif;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+}
+
+xp p {
+    display: block;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--blue-balance);
+    position: absolute;
+    top: 0;
+    left: -77%;
+    z-index: 1;
+    mix-blend-mode: hard-light;
 }
 
 .posts {
@@ -41,22 +72,39 @@
     font-size: 23px;
 }
 
-.user_name+b {
+.level_and_title {
     font-weight: 300;
     font-family: 'Dosis', Arial, sans-serif !important;
-    font-size: 16px;
+    font-size: 12px;
     padding: 9px 0 0 0;
     display: block;
-    opacity: 0.69
+    color: var(--second-contrast) !important
 }
 
-.user_name+b small {
+level {
     display: inline-block;
-    padding: 6px 12px;
-    margin-right: 3px;
+    padding: 0 6px 0 10px;
+    height: 23px;
+    line-height: 24px;
+    margin: 10px 0;
     border-radius: 16px;
-    background: var(--second-contrast-15);
-    color: var(--second-contrast) !important
+    color: var(--main-contrast);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+level img {
+    vertical-align: middle !important;
+    filter: var(--invert2);
+    width: 23px;
+    height: 23px;
+    margin-bottom: 2px;
+    display: inline-block
+}
+
+profile_title {
+    display: block;
+    font-size: 14px;
 }
 
 #soundSwitch+img {
@@ -123,7 +171,7 @@
 }
 
 #living {
-    padding: 12px 0;
+    padding: 0 0 12px 0;
 }
 
 #living img {
@@ -132,7 +180,7 @@
 }
 
 .distribution-stats {
-    margin-bottom: 15vw;
+    margin-bottom: 12vw;
 }
 
 .distribution-stats span {
@@ -196,16 +244,12 @@
     background: none
 }
 
-#send-msg {
-    margin: 0 10px
-}
-
 .blocked img {
     content: url(/svgs/unblock.svg);
 }
 
-#actions #follow:before,
-#actions #follow:after {
+#actions #connect:before,
+#actions #connect:after {
     content: '';
     display: block;
     width: 28px;
@@ -213,15 +257,14 @@
     border-radius: 2px;
     background: var(--second-contrast);
     position: absolute;
-    ;
     transition: 1s transform
 }
 
-#actions #follow:after {
+#actions #connect:after {
     transform: rotate(-90deg)
 }
 
-.following:after {
+.connecting:after {
     transform: rotate(0) !important;
 }
 
@@ -231,24 +274,91 @@
     top: 0;
     left: 0;
     position: absolute !important;
-    transition: all 2.3s;
+    background-image: url(/svgs/biip-logo.svg);
+    filter: var(--invert2)
 }
 
-.following+.blip {
-    animation: bliped 2.3s forwards
+.connecting+.blip {
+    animation: bliped 3s forwards
 }
 
-.unfollow+.blip {
-    animation: bliped-reverse 2s forwards;
+.disconnect+.blip {
+    animation: bliped-reverse 1.4s forwards;
+}
+
+/* pages stuff */
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+.shared_board {
+    margin-top: 23px;
+    letter-spacing: 3px;
 }
 
 
-@media screen and (min-width: 950px) {
+#shared_board {
+    white-space: nowrap;
+    width: 100vw;
+    padding: 0 10px;
+    overflow: hidden;
+    overflow-x: scroll;
+}
+
+#shared_board a,
+#shared_board a:visited {
+    width: 25vw;
+    height: 25vw;
+    margin: 0 5px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+#shared_board a:last-of-type {
+    margin-right: 0;
+}
+
+#shared_board img {
+    width: 25vw;
+    height: 25vw;
+    display: block;
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+#navigation_buttons {
+    text-align: center;
+    height: 32px;
+    width: 100%;
+}
+
+#navigation_buttons button {
+    display: none
+}
+
+#filters {
+    margin: 23px 10px 10px 0
+}
+
+.profile .content_type {
+    padding-top: 23px;
+}
+
+@media screen and (min-width: 690px) {
     #cover {
         height: 335px;
-        margin-top: 10px;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px
+    }
+
+    xp {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
     }
 
     .profile_pic {
@@ -258,7 +368,7 @@
     }
 
     .distribution-stats {
-        margin-bottom: 100px;
+        margin-bottom: 90px;
     }
 
     .distribution-stats .l2g {
@@ -267,5 +377,30 @@
 
     .distribution-stats .s2e {
         border-bottom-right-radius: 10px;
+    }
+
+    .profile .content_type {
+        padding-top: 23px
+    }
+
+    #shared_board {
+        width: 100%;
+        padding: 0
+    }
+
+    #navigation_buttons button {
+        display: flex
+    }
+
+    #shared_board a,
+    #shared_board a:visited {
+        width: 161px;
+        height: 161px;
+    }
+
+
+    #shared_board img {
+        width: 161px;
+        height: 161px;
     }
 }

@@ -43,6 +43,7 @@
 
 #posting-form label img {
     opacity: 0.69;
+    filter: invert(1);
     transition: all 0.23s
 }
 
@@ -103,7 +104,7 @@
 
 .type input:checked+label,
 .type label:hover {
-    background-color: var(--second-contrast-23);
+    background-color: #00000023;
 }
 
 .type b {

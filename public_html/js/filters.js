@@ -3,14 +3,25 @@ import { defaultSounds } from '/js/sounds-preloading.js';
 
 
 export const filters = () => {
+    let form = $('#filters');
+
     let sounds = defaultSounds('lucianape3', null, null)
     // main media filters
     let checkedID = localStorage.getItem('mediaFilter') || 'mixed';
     // if we don't have the #market_location filter we assume we are not on the markets page, so we set to default, this has to be detected in a better and faster way maybe
     !$('#market_location') ? checkedID = 'mixed' : null;
 
+    const updateTitle = () => {
+        if ($('#timeline')) {
+            $('.content_type').innerHTML = checkedID
+        }
+        if ($('#profilepage')) {
+            $('.content_type').innerHTML = `<img src="/avatars/lucianape3.webp" /> ${checkedID}`
+        }
+    }
+
     const filterContent = (type) => {
-        $('.content_type').innerHTML = checkedID
+        updateTitle()
         $$('.posts article').forEach(el => {
             if (type === 'mixed') {
                 el.style.display = 'block'
@@ -29,19 +40,67 @@ export const filters = () => {
         filterContent(checkedID);
     }
 
-    $('#filters').addEventListener('change', e => {
+    const mixedSrc = '/svgs/mixed.svg'
+
+    form.addEventListener('click', e => {
+        if (window.innerWidth <= 690) {
+            form.classList.add('expand');
+            $('.mixed img').src = mixedSrc;
+            if (sounds) {
+                sounds[5].play()
+            }
+
+        } else {
+            if (sounds) {
+                sounds[19].currentTime = 0;
+                sounds[19].play();
+            }
+
+        }
+    })
+
+    form.addEventListener('change', e => {
+        const clickedInput = $('#filters input[name="filters"]:checked')
+
+        checkedID = clickedInput.id;
         sounds = defaultSounds('lucianape3', null, null)
 
-        checkedID = $('#filters input[name="filters"]:checked').id;
         localStorage.setItem('mediaFilter', checkedID)
-        $('.content_type').innerHTML = checkedID
+
+        updateTitle()
+
+
         filterContent(checkedID);
-        sounds[19].currentTime = 0;
-        sounds[19].play();
+
+
+        if (window.innerWidth <= 690) {
+            if (sounds) {
+                sounds[9].currentTime = 0;
+                sounds[9].play();
+            }
+
+            form.classList.remove('expand');
+            $('.mixed img').src = $('#filters input[name="filters"]:checked + label img').src
+        }
+
     });
 
     // MARKETS CLICK
     $('#filters #markets+label').addEventListener('click', e => {
         window.location = '/markets.html'
     })
+
+    if (window.innerWidth <= 690 && !$('.stats')) { // checking for stats element to see if we are on profile page
+        $('main').addEventListener('click', e => {
+            if (form.classList.contains('expand')) {
+                if (sounds) {
+                    sounds[9].currentTime = 0;
+                    sounds[9].play();
+                }
+
+                form.classList.remove('expand');
+                $('.mixed img').src = $('#filters input[name="filters"]:checked + label img').src
+            }
+        })
+    }
 }

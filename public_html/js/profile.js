@@ -1,8 +1,18 @@
-import { $ } from '/js/selectors.js';
+import { $, $$ } from '/js/selectors.js';
+//import { textPagination } from '/js/textContent.js';
 import { pop_it } from '/js/shortMessage.js';
 import { defaultSounds } from '/js/sounds-preloading.js';
 import { filters } from '/js/filters.js';
-filters()
+import { left_right_arrows } from '/js/left_right_arrows.js';
+// $$('.textContent').forEach(el => {
+//     textPagination(el.id, el.querySelector(`.main-data-container p`).textContent)
+// });
+
+filters();
+
+left_right_arrows($('#shared_board'), $('#prevButton'), $('#nextButton'));
+
+
 
 $('#soundSwitch').addEventListener('change', e => {
     if ($('#soundSwitch').checked === true) {
@@ -15,7 +25,7 @@ $('#soundSwitch').addEventListener('change', e => {
 //set checkbox based on localStorage
 localStorage.getItem('sound') === '1' ? $('#soundSwitch').checked = true : $('#soundSwitch').checked = false;
 
-const follow = $('#follow')
+const connect = $('#connect')
 const block = $('#block')
 const username = $('.username')
 
@@ -24,8 +34,8 @@ $('.profile_pic') ? $('.profile_pic').addEventListener('mousedown', e => {
     sounds ? sounds[7].play() : null
 }) : null;
 
-if (follow) {
-    pop_it(follow, ['following', 'unfollow'], ['Following', 'Follow'], ['/avatars/dyablohunter.webp', '/avatars/dyablohunter.webp'], '#000', ['Following', 'Unfollowed'], ['biip', 'biip-reverse'], 'lucianape3', false)
+if (connect) {
+    pop_it(connect, ['connecting', 'disconnect'], ['Disconnect', 'Connect'], ['/avatars/dyablohunter.webp', '/avatars/dyablohunter.webp'], '#000', ['Connected', 'Disconnected'], ['biip', 'biip-reverse'], 'lucianape3', false)
 }
 
 if (block) {

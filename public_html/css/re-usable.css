@@ -1,6 +1,10 @@
-.btn {
+.btn,
+.big_btn,
+.next_btn,
+.prev_btn {
     border: 0;
     background: var(--second-contrast-15);
+    color: white;
     border-radius: 10px;
     padding: 8px 16px;
     min-width: 87px;
@@ -10,31 +14,113 @@
     font-family: 'Roboto', Arial, sans-serif;
 }
 
+.big_btn {
+    padding: 16px;
+    height: 48px;
+    border-radius: 48px;
+}
+
+.next_btn,
+.prev_btn {
+    display: block;
+    min-width: auto;
+    width: 32px;
+    height: 32px;
+    margin-bottom: -194px;
+    border-radius: 32px;
+    position: relative;
+    padding: 0;
+    z-index: 1;
+    overflow: hidden;
+    transition: 0.23s transform;
+}
+
+.next_btn:before,
+.prev_btn:before {
+    background: url(/svgs/arrow-right.svg) no-repeat 50% 50%;
+    background-size: 30px 30px;
+    content: '';
+    display: block;
+    width: 32px;
+    height: 32px;
+    filter: invert(1)
+}
+
+.next_btn:after,
+.prev_btn:after {
+    content: '';
+    display: block;
+    width: 256px;
+    height: 256px;
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    z-index: -1;
+    inset: -110%;
+    background-image: conic-gradient(from 90deg,
+            violet,
+            indigo,
+            blue,
+            green,
+            yellow,
+            orange,
+            red,
+            violet);
+    animation: 6s rotateGradient linear infinite;
+
+}
+
+.prev_btn {
+    transform: rotate(180deg);
+    margin-left: -50px
+}
+
+.next_btn {
+    margin-right: -50px
+}
+
+.prev_btn:hover {
+    transform: rotate(180deg) scale(1.23);
+}
+
+.next_btn:hover {
+    transform: scale(1.23);
+}
+
+.main-color {
+    background: var(--main-color)
+}
+
 .pv23 {
     padding: 23px 0 !important
 }
 
-.S-icon,
-.M-icon {
+.S_icon,
+.M_icon {
     width: 16px;
     height: 16px;
     vertical-align: text-top;
     display: inline-block;
 }
 
-.M-icon {
+.M_icon {
     width: 19px;
     height: 19px;
 }
 
-.L-icon {
+.L_icon {
     width: 32px;
     height: 32px;
 }
 
-.XL-icon {
+.XL_icon {
     width: 64px;
     height: 64px;
+}
+
+.XXL_icon {
+    width: 128px;
+    height: 128px;
 }
 
 #error {
@@ -50,8 +136,10 @@
 .maxw-690 {
     max-width: 690px;
     margin: 0 auto;
+    left: 0;
+    right: 0;
     padding: 0 10px;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .vh100 {
@@ -178,10 +266,43 @@ body .blur-it {
     filter: blur(3px) !important
 }
 
-.grid2x2 {
+.grid1 {
+    display: block !important
+}
+
+.grid2,
+.grid3,
+.grid4,
+.grid5,
+.grid6 {
     display: grid;
     grid-template-rows: repeat(1, 1fr);
     grid-template-columns: repeat(2, 1fr);
+}
+
+.grid3 {
+    grid-template-columns: repeat(3, 1fr);
+    font-size: 100%
+}
+
+.grid4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.grid5 {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.grid6 {
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.grid9 {
+    grid-template-columns: repeat(9, 1fr);
+}
+
+.gap2 {
+    gap: 2px
 }
 
 .gap10 {
@@ -228,7 +349,8 @@ body .blur-it {
     display: inline-block;
     margin: 0 0 5px 0;
     position: relative;
-    padding: 5px
+    width: 100%;
+    overflow: hidden;
 }
 
 .binaryCheckbox label {
@@ -245,11 +367,13 @@ body .blur-it {
     border-radius: 50px;
     margin: 0 10px;
     display: inline-block;
+    background: var(--button-bg);
 }
 
 .binaryCheckbox input:not(:checked)+label span:first-of-type,
 .binaryCheckbox input:checked+label span:last-of-type {
-    background: var(--second-contrast-15);
+    background: var(--main-color);
+    color: white
 }
 
 
@@ -313,11 +437,183 @@ body .blur-it {
     text-align: left
 }
 
+.mh-10 {
+    margin: 0 10px
+}
 
 
+/* Item Quality Stuff */
+.poor {
+    color: var(--poor);
+    border-color: var(--poor)
+}
+
+.common {
+    color: var(--common);
+    border-color: var(--common)
+}
+
+.uncommon {
+    color: var(--uncommon);
+    border-color: var(--uncommon)
+}
+
+.rare {
+    color: var(--rare);
+    border-color: var(--rare)
+}
+
+.epic {
+    color: var(--epic);
+    border-color: var(--epic)
+}
+
+.legendary {
+    color: var(--legendary);
+    border-color: var(--legendary)
+}
+
+.artifact {
+    color: var(--artifact);
+    border-color: var(--artifact)
+}
+
+.heirloom {
+    color: var(--heirloom);
+    border-color: var(--heirloom);
+}
+
+
+/* User level colors */
+
+/* From 1 to 19 */
+.levelrange1 {
+    background-color: var(--second-contrast) !important
+}
+
+/* From 20 to 29 */
+.levelrange2 {
+    background-color: yellow !important;
+    color: #000
+}
+
+/* From 30 to 39 */
+.levelrange3 {
+    background-color: #FFB733 !important
+}
+
+/* From 40 to 49 */
+.levelrange4 {
+    background-color: #FF7F33 !important
+}
+
+/* From 50 to 59 */
+.levelrange5 {
+    background-color: #FF5522 !important
+}
+
+/* From 60 to 69 */
+.levelrange6 {
+    background-color: var(--main-color) !important
+}
+
+
+/* PAGE CONNECT */
+
+.connect_page {
+    position: relative;
+}
+
+.connect_page div,
+.connect_page button {
+    width: 64px;
+    height: 64px;
+    border: 0;
+    border-radius: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    cursor: pointer;
+}
+
+.connect_page button {
+    background: var(--second-contrast-15);
+}
+
+.blip {
+    pointer-events: none;
+    border-radius: 51%;
+    top: 0;
+    left: 0;
+    position: absolute !important;
+    background-image: url(/svgs/biip-logo.svg);
+    filter: var(--invert2)
+}
+
+.connect_page .blip {
+    position: absolute !important;
+    background: none
+}
+
+.connect_page button:before,
+.connect_page button:after {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 6px;
+    border-radius: 2px;
+    background: var(--second-contrast);
+    position: absolute;
+    transition: 1s transform
+}
+
+.connect_page button:after {
+    transform: rotate(-90deg)
+}
+
+.connect_page .connecting:after {
+    transform: rotate(0) !important;
+}
+
+.connect_page .connecting+.blip {
+    animation: bliped 3s forwards
+}
+
+.connect_page .disconnect+.blip {
+    animation: bliped-reverse 1.4s forwards;
+}
 
 @media screen and (max-width: 950px) {
     .maxw-690 {
-        padding: 0
+        padding: 0;
+        overflow: hidden
+    }
+
+    .grid3 {
+        font-size: 80%;
+    }
+
+    .gap10 {
+        gap: 5px
+    }
+
+    .next_btn,
+    .prev_btn {
+        margin-bottom: calc(-25vw - 32px);
+        box-shadow: 0 0 5px 1px black;
+    }
+
+    .next_btn:after,
+    .prev_btn:after {
+        background: #db463e
+    }
+
+    .prev_btn {
+        margin-left: 23px
+    }
+
+    .next_btn {
+        margin-right: 23px
     }
 }

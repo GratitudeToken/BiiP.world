@@ -289,12 +289,12 @@ const logout = async () => {
 }
 
 // Add button listeners
-headerLoginButton.addEventListener("click", () => login(false))
+headerLoginButton ? headerLoginButton.addEventListener("click", () => login(false)) : null;
 loginButtons.forEach(el => {
     el.addEventListener("click", () => login(false))
 })
 
-logoutButton.addEventListener("click", () => logout())
+logoutButton ? logoutButton.addEventListener("click", () => logout()) : null;
 // Restore
 login(true)
 

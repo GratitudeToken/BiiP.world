@@ -6,7 +6,7 @@ const postBTN = $('#post-btn')
 
 export const posting = () => {
     const posting = $('#posting')
-    postBTN.addEventListener('click', e => {
+    postBTN ? postBTN.addEventListener('click', e => {
         let sounds = defaultSounds('lucianape3', null, null)
         // IDEA -  don't forget to set expiration date on static cached files of user content, for example 24H should be
 
@@ -22,7 +22,7 @@ export const posting = () => {
 
         posting.classList.toggle('block');
         posting.classList.contains('block') ? sounds[1].play() : sounds[2].play();
-    })
+    }) : null;
 
     $('#posting-form') ? $('#posting-form').addEventListener('submit', e => {
         e.preventDefault()

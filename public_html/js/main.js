@@ -4,10 +4,34 @@ import { defaultSounds } from '/js/sounds-preloading.js';
 import { posting } from '/js/posting.js';
 import { smallRandom } from '/js/random.js';
 import { debounce } from '/js/debouncer.js';
-
-posting()
+import { tooltips } from '/js/tooltips.js';
+import { draggableStuff } from '/js/draggable.js';
+$('#homepage') ? null : tooltips();
+draggableStuff();
+posting();
 
 let sounds = defaultSounds('lucianape3', null, null)
+
+
+$$('.wheel').forEach(element => {
+    element.addEventListener('wheel', (e) => {
+        // Prevents vertical scrolling
+        e.preventDefault();
+        if ($('.arrow_indicators')) {
+            $('#prevButton').style.display = 'none'; // hide this for now
+            $('#nextButton').style.display = 'none'; // hide this for now
+        }
+
+        // Adjusts horizontal scroll position
+        element.scrollLeft += e.deltaY;
+    });
+    element.addEventListener('touchmove', (e) => {
+        if ($('.arrow_indicators')) {
+            $('#prevButton').style.display = 'none'; // hide this for now
+            $('#nextButton').style.display = 'none'; // hide this for now
+        }
+    });
+});
 
 
 $$('.messages').forEach(el => {
@@ -20,20 +44,10 @@ $$('.messages').forEach(el => {
     })
 })
 
-// avatar click
-$('#user-menu .avatar-container') ? $('#user-menu .avatar-container').addEventListener('click', e => {
-    $('#user-menu').classList.toggle('show');
-    $('#notifications').classList.remove('showNotifications')
-    sounds = defaultSounds('lucianape3', null, null)
-    if (sounds && $('#user-menu').classList.contains('show')) {
-        sounds[0].play()
-    }
-}) : null;
-
-
 // NOTIFICATIONS
 $('#notifications') ? $('#notifications').addEventListener('click', e => {
     $('#user-menu').classList.remove('show')
+    $('slots').classList.remove('open')
     $('#notifications').classList.toggle('showNotifications')
     sounds = defaultSounds('lucianape3', null, null)
     if (sounds) {
@@ -42,36 +56,79 @@ $('#notifications') ? $('#notifications').addEventListener('click', e => {
     }
 }) : null;
 
+// BAG AND WALLET
+$('bags') ? $('bags').addEventListener('click', e => {
+    sounds = defaultSounds('lucianape3', null, null)
+    if (sounds) {
+        sounds[31].currentTime = 0;
+        sounds[31].play();
+    }
+    $('slots').classList.toggle('open')
+    $('#user-menu').classList.remove('show')
+    $('#notifications').classList.remove('showNotifications')
+
+    $('bag.used').addEventListener('click', e => {
+        if (sounds) {
+            sounds[26].currentTime = 0;
+            sounds[26].play();
+        }
+    });
+
+    $('keychain').addEventListener('click', e => {
+        if (sounds) {
+            sounds[28].currentTime = 0;
+            sounds[28].play();
+        }
+    });
+}) : null;
+
+$('wallet') ? $('wallet').addEventListener('click', e => {
+    $('#user-menu').classList.remove('show')
+    $('#notifications').classList.remove('showNotifications')
+    if (sounds) {
+        sounds[27].currentTime = 0;
+        sounds[27].play();
+    }
+}) : null;
 
 
-$('.messages_header header').addEventListener('click', e => {
+// avatar click
+$('#user-menu .avatar-container') ? $('#user-menu .avatar-container').addEventListener('click', e => {
+    $('#user-menu').classList.toggle('show');
+    $('slots').classList.remove('open')
+    $('#notifications').classList.remove('showNotifications')
+    sounds = defaultSounds('lucianape3', null, null)
+    if (sounds && $('#user-menu').classList.contains('show')) {
+        sounds[0].play()
+    }
+}) : null;
+
+
+$('.messages_header header') ? $('.messages_header header').addEventListener('click', e => {
     $('.messages_from').style = 'left: 0'
-})
+}) : null;
 
-$('#dm').addEventListener('click', e => {
+$('#dm') ? $('#dm').addEventListener('click', e => {
     $('.messages_from').style = ''
-})
+}) : null;
 
-$('#messages-container .close').addEventListener('click', e => {
+$('#messages-container .close') ? $('#messages-container .close').addEventListener('click', e => {
     $('#messages-container').classList.remove('showMessages');
     $('body').style.overflow = ''
     sounds = defaultSounds('lucianape3', null, null)
     if (sounds) {
         sounds[4].play();
     }
+}) : null;
 
-})
-
-$('#timeline').addEventListener('click', e => { window.location = "/timeline.html"; })
+$('#timelineLink').addEventListener('click', e => { window.location = "/timeline.html"; })
 
 
 // SEARCH FEATURE
 $('#search-btn').addEventListener('click', e => {
     sounds = defaultSounds('lucianape3', null, null)
-    if (sounds && !$('.showSearch')) {
-        sounds[18].play();
-    } else {
-        sounds[20].play();
+    if (sounds) {
+        !$('.showSearch') ? sounds[18].play() : sounds[20].play();;
     }
     $('body').classList.toggle('showSearch')
 })
@@ -89,14 +146,18 @@ $$('.like2give').forEach(el => {
 
 $('#profile') ? $('#profile').addEventListener('click', e => { window.location = "/profile.html"; }) : null;
 
-
-$('#index') ? $('#index').addEventListener('click', e => { window.location = "/" }) : null;
+$$('.timeline').forEach(el => {
+    el.addEventListener('click', e => {
+        window.location = "/timeline.html"
+    })
+});
 
 $$('.comments').forEach(el => {
     el.addEventListener('click', e => {
         window.location = "/post.html";
     })
 });
+
 
 
 

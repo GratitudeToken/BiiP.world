@@ -1,7 +1,9 @@
 import { $, $$ } from '/js/selectors.js';
-import { pop_it } from '/js/shortMessage.js';
+//import { pop_it } from '/js/shortMessage.js';
 import { defaultSounds } from '/js/sounds-preloading.js';
-import { posting } from '/js/posting.js';
+//import { carousel } from '/js/carousel.js';
+
+const sounds = defaultSounds('lucianape3', null, null);
 
 const nftSchemaURL = '/schemas/nft_markets.json';
 const regularSchemaURL = '/schemas/regular_markets.json';
@@ -10,55 +12,49 @@ let nftSchema;
 let regularSchema;
 
 const updateSubcategories = (object) => {
-    const subcategories = object.map(el => `<div>${el}</div>`).join('');
-    $('#subcategories').innerHTML = subcategories;
+    const subcategoriesContainer = $('#subcategories');
+    const subcategories = object.map((el, i) => `<button class='btn ${i === 0 ? 'selected' : ''}'>${el}</button>`).join('');
+    subcategoriesContainer.innerHTML = subcategories;
+
+    subcategoriesContainer.addEventListener('click', e => {
+        if (e.target.tagName === 'BUTTON') {
+            e.preventDefault();
+            if (sounds) {
+                sounds[0].currentTime = 0;
+                sounds[0].play()
+            }
+            $$('#subcategories button').forEach(button => {
+                button.classList.remove('selected');
+            });
+            e.target.classList.add('selected');
+        }
+    });
 };
+
 
 const marketType = $('.market_type');
 const descr = $('#marketDescription');
 
 const eventListeners = (type) => {
-    $$(`#${type} img`).forEach(el => {
-        el.addEventListener('click', () => handleImageClick(el, type));
+    $$(`#${type} img`).forEach((el, i) => {
+        el.addEventListener('click', () => handleImageClick(el, type, i));
     });
 };
 
-const handleImageClick = (el, type) => {
+const handleImageClick = (el, type, index) => {
     $(`#${type} .selected`).classList.remove('selected');
     el.classList.add('selected');
     marketType.textContent = el.title;
-
+    let obj;
     if (type === 'nft') {
-        descr.textContent = `Create, Sell or Buy unique ${el.title} as NFT's.`;
-        updateSubcategories(nftSchema[el.title]);
+        obj = nftSchema
     } else if (type === 'regular') {
-        const str = getRegularDescription(el.title);
-        descr.textContent = str;
-        updateSubcategories(regularSchema[el.title]);
+        obj = regularSchema
     }
-};
-
-const getRegularDescription = (title) => {
-    switch (title) {
-        case 'Free Stuff':
-            return `No price tag, just pick it up or pay for transport.`;
-        case 'For Sale':
-            return `Most common For Sale stuff.`;
-        case 'Jobs':
-            return `Find or post a Job.`;
-        case 'Community':
-            return `Find something valuable to do or post something useful for your Community.`;
-        case 'Business and Industrial':
-            return `Buy or Sell a Business or Industrial things.`;
-        case 'Hobbies':
-            return `Find your tribe and have fun buying or selling.`;
-        case 'Travel':
-            return `Find your dream vacation or offer one.`;
-        case 'Health and Fitness':
-            return `We need at least 3-4 forms of therapy nowadays just to stay alive.`;
-        default:
-            return `Buy or Sell ${title}`;
-    }
+    descr.textContent = obj[el.title].descr;
+    updateSubcategories(obj[el.title].subcat);
+    sounds[23].currentTime = 0;
+    sounds[23].play()
 };
 
 const getSchema = async (location) => {
@@ -82,13 +78,15 @@ const fetchData = async (type) => {
         const selectedTitle = $(`#${type} .selected`).title;
         marketType.textContent = selectedTitle;
 
+        let obj;
+
         if (type === 'nft') {
-            updateSubcategories(nftSchema[selectedTitle]);
-            descr.textContent = `Create, Sell or Buy unique ${selectedTitle} as NFT's.`;
+            obj = nftSchema
         } else if (type === 'regular') {
-            updateSubcategories(regularSchema[selectedTitle]);
-            descr.textContent = getRegularDescription(selectedTitle);
+            obj = regularSchema
         }
+        descr.textContent = obj[selectedTitle].descr;
+        updateSubcategories(obj[selectedTitle].subcat);
 
         eventListeners(type);
     } catch (error) {
@@ -100,7 +98,31 @@ fetchData('nft');
 
 const marketSwitch = $('#marketTypeSwitch');
 
+
 marketSwitch.addEventListener('change', () => {
-    const switchType = marketSwitch.checked ? 'regular' : 'nft';
+    let switchType;
+
+    if (marketSwitch.checked) {
+        switchType = 'regular';
+    } else {
+        switchType = 'nft';
+    }
+
+    $$('.squareSelection div').forEach(el => {
+        el.classList.toggle('selected')
+    })
+
     fetchData(switchType);
+});
+
+const marketGridFilter = $('#grid_filter');
+
+marketGridFilter.addEventListener('change', () => {
+    const checkedID = $('#grid_filter input:checked').id;
+    for (let index = 1; index <= 3; index++) {
+        $('#market_items').classList.remove('grid' + index)
+    }
+
+    $('#market_items').classList.add(checkedID)
+
 });

@@ -4,23 +4,21 @@
 @import url("/css/header.css");
 @import url("/css/subheader.css");
 @import url("/css/re-usable.css");
-@import url("/css/index.css");
 @import url("/css/footer.css");
 @import url("/css/animations.css");
 @import url("/css/loader.css");
 @import url("/css/posting.css");
+@import url("/css/tooltips.css");
 
 main {
-  padding-bottom: 50px;
+  padding: 53px 0 !important;
 }
 
 .posts {
   padding-bottom: 100px;
 }
 
-.main-header,
-#subheader,
-#navigation {
+.main-header {
   position: relative;
   width: 100%;
 }
@@ -76,60 +74,58 @@ article a:visited {
 }
 
 .content_type {
+  padding: calc(12vw + 20px) 0 23px 0;
+  text-transform: uppercase;
   font-size: 23px;
   font-family: 'Dosis', Arial, sans-serif !important;
-  text-transform: uppercase;
-  padding: 10px 0 23px 0;
+}
+
+.content_type a,
+.content_type a:visited {
+  display: block;
+  color: var(--second-contrast);
+  font-family: 'Dosis', Arial, sans-serif !important;
+}
+
+.content_type img {
+  display: inline-block;
+  margin: 0 10px -8px 0
 }
 
 .image,
 video {
   display: block;
   width: 100%;
+  margin: 0 auto;
+  max-height: 150vw;
+  background: black;
   object-fit: contain;
   object-position: center;
   border-radius: 10px;
   box-shadow: 0 5px 10px #00000069;
 }
 
+video::backdrop {
+  background: red;
+  /* works */
+}
+
 audio {
   width: 100%;
 }
 
-.text .main-data-container {
+.textContent .main-data-container {
   border-radius: 0
 }
 
-.text p {
+.textContent p {
   white-space: pre-line !important;
-  text-align: left;
+  text-align: justify;
   background-color: var(--text);
   padding: 23px;
   margin: 0;
   color: #232323;
-  font-size: 14px;
-}
-
-.balances img {
-  margin: auto 3px;
-  vertical-align: sub;
-}
-
-.balances span {
-  border-radius: 10px;
-  background: rgba(219, 70, 62, 0.12);
-  border: 1px solid rgba(219, 70, 62, 0.23);
-  padding: 5px 10px;
-  color: var(--red-balance);
-  display: inline-block;
-  font-family: 'Dosis', Arial, sans-serif;
-  font-size: 14px
-}
-
-.balances .like2give-balance {
-  background: rgba(62, 148, 219, 0.12);
-  border-color: rgba(62, 125, 219, 0.23);
-  color: var(--blue-balance)
+  font-size: 3.8889vw;
 }
 
 
@@ -155,7 +151,7 @@ audio {
   position: relative;
 }
 
-.text .main-data-container,
+.textContent .main-data-container,
 audio {
   border-radius: 10px;
   box-shadow: 0 5px 10px #00000069;
@@ -171,11 +167,11 @@ audio {
   width: 100vw;
   overflow-x: scroll;
   white-space: nowrap;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  position: relative
 }
 
 .post-actions button {
+  position: relative;
   height: 44px;
   line-height: 44px;
   background: var(--second-contrast-15);
@@ -270,6 +266,7 @@ audio {
 .shortMessage p {
   text-align: left;
   padding: 0 0 0 12px;
+  margin: 0;
   font-size: 18px;
   font-weight: bold;
   font-family: 'Roboto', Arial, sans-serif;
@@ -287,7 +284,7 @@ audio {
   position: fixed;
   top: calc(50% - 32px);
   left: 0;
-  z-index: 1;
+  z-index: 23;
   opacity: 0;
   pointer-events: none;
   transform: scale(0);
@@ -373,7 +370,7 @@ body.showSearch #search_container {
 }
 
 .results span:hover {
-  color: var(--main-contrast);
+  color: white;
   background: var(--main-color)
 }
 
@@ -390,17 +387,25 @@ body.showSearch #search_container {
   right: 0;
   margin: 0 auto;
   padding: 0;
-  z-index: 10;
+  z-index: 22;
   opacity: 0;
+  background: var(--main-bg-color);
   pointer-events: none;
   transition: 0.23s all
 }
 
+#messages-container>div {
+  max-width: 690px;
+  margin: 0 auto;
+}
+
 .messages_header {
   width: 100%;
-  max-width: 690px;
+  height: 54px;
   background: var(--main-color);
   position: fixed;
+  left: 0;
+  right: 0;
   bottom: 0;
   z-index: 11;
 }
@@ -414,7 +419,7 @@ body.showSearch #search_container {
 
 #messages-container header {
   padding: 10px;
-  cursor: pointer
+  cursor: pointer;
 }
 
 #messages-container .name_bio {
@@ -436,7 +441,7 @@ body.showSearch #search_container {
 
 .messages_from {
   width: 80%;
-  max-width: 260px;
+  max-width: 260px !important;
   height: calc(100vh - 94px);
   background: var(--main-header-bg);
   backdrop-filter: blur(5px);
@@ -477,14 +482,15 @@ body.showSearch #search_container {
 #dm .discussion {
   overflow: hidden;
   overflow-y: scroll;
-  -ms-overflow-style: none;
-  /* IE and Edge */
-  scrollbar-width: none;
-  /* Firefox */
 }
 
 #dm .discussion h3 {
-  padding-top: 50px
+  padding-top: 63px;
+  text-align: center;
+}
+
+#dm .discussion h3 img {
+  margin: 0 auto
 }
 
 #dm .discussion p:last-of-type {
@@ -657,7 +663,7 @@ body.showSearch #search_container {
 
 
 .stats {
-  padding: 10px
+  padding: 23px 10px
 }
 
 .stats div {
@@ -674,6 +680,91 @@ body.showSearch #search_container {
 }
 
 
+.flagged:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  --angle: 0deg;
+  z-index: 2;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+  background-clip: padding-box;
+  animation: 2s rainbow-border linear infinite;
+}
+
+
+/* TIMELINE */
+
+pages {
+  display: block !important
+}
+
+pages .name_bio {
+  line-height: 1.4;
+}
+
+article h2 {
+  color: var(--second-contrast);
+  padding: 23px 0
+}
+
+page {
+  background: var(--second-contrast-15);
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+page h3 {
+  line-height: 1
+}
+
+page a,
+page a:visited {
+  color: var(--second-contrast);
+  position: relative;
+  overflow: hidden;
+}
+
+page div>a:after {
+  display: block;
+  z-index: 1;
+  content: '';
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 32%);
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0
+}
+
+page a lvl {
+  position: absolute;
+  bottom: 3px;
+  left: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 2;
+  text-shadow: 0 0 5px black;
+}
+
+page img {
+  border-radius: 10px;
+}
+
+page b {
+  display: block;
+  font-weight: normal;
+  color: var(--second-contrast-69)
+}
+
 
 @media screen and (min-width: 950px) {
 
@@ -687,7 +778,7 @@ body.showSearch #search_container {
     height: 64px;
     border-radius: 64px;
     border: 0px;
-    background: #ffffff url(/svgs/top.svg) no-repeat 50% 50%;
+    background: url(/svgs/top.svg) no-repeat 50% 50%;
     background-size: 32px 32px;
     transition: 0.23s bottom
   }
@@ -699,8 +790,12 @@ body.showSearch #search_container {
     bottom: 10px !important
   }
 
+  .stats {
+    padding: 10px 0
+  }
+
   article {
-    padding: 23px 0;
+    padding: 23px 10px;
     background: none;
   }
 
@@ -713,8 +808,11 @@ body.showSearch #search_container {
     margin: 10px 1px 0 1px;
   }
 
+  .image,
   video {
-    max-height: 420px;
+    width: auto;
+    max-width: 100%;
+    max-height: 690px;
   }
 
   .shortMessage {
@@ -726,4 +824,20 @@ body.showSearch #search_container {
     border-top-right-radius: 10px;
   }
 
+  .content_type {
+    padding-top: 100px
+  }
+
+  .textContent p {
+    min-height: 335px;
+    font-size: 14px
+  }
+
+  pages {
+    display: grid !important
+  }
+
+  page {
+    margin-bottom: initial;
+  }
 }

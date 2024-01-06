@@ -1,6 +1,8 @@
 #subheader {
-    position: sticky !important;
-    top: 42px
+    position: fixed;
+    top: 53px;
+    width: 100%;
+    z-index: 10;
 }
 
 #subheader nav {
@@ -10,11 +12,19 @@
 }
 
 #filters {
-    padding: 12px 10px 23px 10px;
+    width: 12vw;
+    overflow: hidden;
+    margin: 10px 10px 10px 0;
     display: grid;
     gap: 2px;
     grid-template-rows: repeat(1, 1fr);
     grid-template-columns: repeat(7, 1fr);
+    transition: 0.23s width
+}
+
+#filters.expand {
+    width: 100%;
+    overflow: visible;
 }
 
 #filters input {
@@ -24,36 +34,80 @@
 #filters label {
     width: 12vw;
     height: 12vw;
+    position: relative;
     margin: 0 auto;
-    border-radius: 51%;
+    border-radius: 64px;
     cursor: pointer;
-    background: var(--second-contrast-15);
+    background: var(--button-bg);
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: 0.23s background
+    pointer-events: none;
+    transition: 0.23s all
+}
+
+#filters.expand label {
+    pointer-events: all;
+}
+
+#filters:not(.expand) .mixed {
+    background-color: var(--main-color)
+}
+
+#filters:not(.expand) .mixed img {
+    filter: none
+}
+
+#filters label:first-of-type {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#filters.expand label:first-of-type {
+    border-top-left-radius: 64px;
+    border-bottom-left-radius: 64px;
 }
 
 #filters label:hover,
 #filters input:checked+label {
-    background: var(--red-balance);
+    background: var(--red-balance) !important;
 }
 
 #filters label img {
+    display: inline-block;
     min-width: 50%;
     max-height: 50%;
+    filter: var(--invert2);
     transition: 0.23s filter
 }
 
 #filters input:checked+label img,
 #filters label:hover img {
-    filter: invert(1)
+    filter: none !important
 }
 
-@media screen and (min-width: 950px) {
+@media screen and (min-width: 690px) {
+    #filters {
+        width: 100% !important;
+    }
+
+    #filters,
     #filters label {
         width: 64px;
         height: 64px;
+    }
+
+    #filters label {
+        border-radius: 64px !important;
+        pointer-events: all !important;
+    }
+
+    #filters:not(.expand) .mixed {
+        background-color: var(--button-bg)
+    }
+
+    #filters:not(.expand) .mixed img {
+        filter: var(--invert2)
     }
 
     #filters label img {

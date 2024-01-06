@@ -1,4 +1,4 @@
-const defaultFiles = ['click', 'powerup', 'powerup-reverse', 'message', 'message-reverse', 'inspect', 'bell', 'like', 'drawer', 'drawer-reverse', 'swing', 'sword-swing', 'whoosh', 'bamboo-swing', 'dark', 'light', 'post', 'send', 'search', 'filter', 'okay']
+const defaultFiles = ['click', 'powerup', 'powerup-reverse', 'message', 'message-reverse', 'inspect', 'bell', 'like', 'drawer', 'drawer-reverse', 'swing', 'sword-swing', 'whoosh', 'bamboo-swing', 'dark', 'light', 'post', 'send', 'search', 'filter', 'okay', 'biip', 'funky-radar', 'low-blip', 'low-blip-reverse', 'bag-search', 'money-bag-shake', 'velcro', 'keychain', 'wachaa', 'bag-drop', 'inventory']
 
 export const defaultSounds = ((username, files, dir) => {
     // username - that owns the sounds

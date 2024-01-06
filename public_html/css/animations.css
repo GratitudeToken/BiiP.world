@@ -35,7 +35,7 @@
 }
 
 
-@media screen and (min-width: 950px) {
+@media screen and (min-width: 690px) {
     .circle-glow {
         width: 201px;
         height: 201px;
@@ -259,25 +259,25 @@
     0% {
         opacity: 0;
         transform: scale(1);
-        background: transparent
+        background-image: url(/svgs/biip-logo.svg);
     }
 
     1% {
         opacity: 1;
         transform: scale(1);
-        background: #db463e;
+        background-image: url(/svgs/biip-logo.svg);
     }
 
     99% {
         opacity: 0;
         transform: scale(23);
-        background: #db463e;
+        background-image: url(/svgs/biip-logo.svg);
     }
 
     100% {
         opacity: 0;
         transform: scale(1);
-        background: #db463e;
+        background-image: url(/svgs/biip-logo.svg);
     }
 }
 
@@ -285,19 +285,19 @@
     0% {
         opacity: 1;
         transform: scale(23);
-        background: #db463e
+        background-image: url(/svgs/biip-logo.svg);
     }
 
     90% {
         opacity: 0.5;
         transform: scale(1);
-        background: transparent;
+        background-image: url(/svgs/biip-logo.svg);
     }
 
     100% {
         opacity: 0;
         transform: scale(1);
-        background: transparent;
+        background-image: url(/svgs/biip-logo.svg);
     }
 }
 
@@ -328,14 +328,221 @@
 
 @keyframes glowy {
     0% {
-        box-shadow: 0 0 0 var(--main-color);
+        box-shadow: 0 0 0 var(--second-contrast);
     }
 
     50% {
-        box-shadow: 0 0 120px var(--main-color);
+        box-shadow: 0 0 120px var(--second-contrast);
+    }
+
+    90% {
+        box-shadow: 0 0 0 var(--second-contrast);
     }
 
     100% {
-        box-shadow: 0 0 0 var(--main-color);
+        box-shadow: 0 0 0 var(--second-contrast);
+    }
+}
+
+
+
+@keyframes letter_spacing {
+    0% {
+        letter-spacing: 3px;
+    }
+
+    50% {
+        letter-spacing: initial;
+    }
+
+    100% {
+        letter-spacing: 3px;
+    }
+}
+
+
+@keyframes verticak-shaking {
+    0% {
+        transform: translateY(0)
+    }
+
+    25% {
+        transform: translateY(3px)
+    }
+
+    50% {
+        transform: translateY(-3px)
+    }
+
+    75% {
+        transform: translateY(3px)
+    }
+
+    100% {
+        transform: translateY(0)
+    }
+}
+
+
+
+
+
+
+@keyframes rainbow-border {
+    to {
+        --angle: 360deg;
+    }
+}
+
+/* PROPERTY - NEW CSS FEATURE */
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+
+@keyframes rotateGradient {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+@keyframes left_wiggle {
+    0% {
+        margin-left: 0
+    }
+
+    50% {
+        margin-left: 10px
+    }
+
+    100% {
+        margin-left: 0
+    }
+}
+
+@keyframes right_wiggle {
+    0% {
+        margin-right: 0
+    }
+
+    50% {
+        margin-right: 10px
+    }
+
+    100% {
+        margin-right: 0
+    }
+}
+
+
+
+@keyframes blend {
+    0% {
+        mix-blend-mode: soft-light;
+    }
+
+    2% {
+        mix-blend-mode: color-dodge;
+    }
+
+    2.1% {
+        mix-blend-mode: color-dodge;
+    }
+
+    3% {
+        mix-blend-mode: color;
+    }
+
+    3.1% {
+        mix-blend-mode: color;
+    }
+
+    4% {
+        mix-blend-mode: difference;
+    }
+
+    4.1% {
+        mix-blend-mode: difference;
+    }
+
+    7% {
+        mix-blend-mode: lighten;
+    }
+
+    8% {
+        mix-blend-mode: lighten;
+    }
+
+    8.5% {
+        mix-blend-mode: multiply;
+    }
+
+    8.9% {
+        mix-blend-mode: multiply;
+    }
+
+    9% {
+        mix-blend-mode: screen;
+    }
+
+    9.2% {
+        mix-blend-mode: screen;
+    }
+
+    10% {
+        mix-blend-mode: soft-light;
+    }
+
+    100% {
+        mix-blend-mode: soft-light;
+    }
+}
+
+@keyframes bg-sway {
+    0% {
+        background-size: 100%;
+        background-position: 50% 50%;
+    }
+
+    23% {
+        background-size: 123%;
+        background-position: 60% 60%;
+    }
+
+    32% {
+        background-size: 150%;
+        background-position: 40% 40%;
+    }
+
+    69% {
+        background-size: 123%;
+        background-position: 55% 55%;
+    }
+
+    100% {
+        background-size: 100%;
+        background-position: 50% 50%;
+    }
+
+}
+
+@keyframes bg-up-down {
+    0% {
+        background-position: 50% 0;
+    }
+
+    50% {
+        background-position: 50% 100%;
+    }
+
+    100% {
+        background-position: 50% 0;
     }
 }

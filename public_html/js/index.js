@@ -1,3 +1,6 @@
+import { $ } from '/js/selectors.js';
+import { defaultSounds } from '/js/sounds-preloading.js';
+let sounds = defaultSounds('lucianape3', null, null)
 // General Functions
 const fnRequestAnimationFrame = (fnCallback) => {
     const fnAnimFrame =
@@ -273,3 +276,10 @@ const app = () => {
 };
 
 fnAddEventListener(window, 'load', app);
+
+
+$('#worldCanvas img').addEventListener('mouseenter', e => {
+    if (sounds) {
+        sounds[21].play();
+    }
+})
